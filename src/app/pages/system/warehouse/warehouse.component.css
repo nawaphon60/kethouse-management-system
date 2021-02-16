@@ -1,0 +1,35 @@
+.inner-content {
+    padding: 24px;
+    background: #fff;
+    min-height: 360px;
+}
+
+.btn-orange {
+    color: #fff;
+    background: #E85440;
+    border-color: #E85440;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+.btn-orange:hover {
+    color: #e03526;
+    background: #fff;
+    border-color: #e03526 !important;
+    font-weight: 400;
+}
+
+.btn-edit-delete {
+    border: none;
+    background: none;
+}
+
+.search-input {
+    width: 542px;
+    margin: 0 8px 8px 0;
+}
+
+.table-icon {
+    font-size: 26px;
+}
+

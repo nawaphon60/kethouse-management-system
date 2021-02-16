@@ -1,0 +1,54 @@
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="240px" [nzTrigger]="null">
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-submenu routerLinkActive="ant-menu-submenu-open" [(nzOpen)]="openMap.sub1"
+        (nzOpenChange)="openHandler('sub1')">
+        <span title><i class="fas fa-warehouse menu-icon"></i><span>Warehouse</span></span>
+        <ul>
+          <a routerLink="/system/warehouse">
+            <li nz-menu-item routerLinkActive="ant-menu-item-selected">Warehouse</li>
+          </a>
+          <li nz-menu-item>sub2</li>
+          <li nz-menu-item>sub3</li>
+        </ul>
+      </li>
+      <ng-template #warehouseIcon>
+        <div style="color: aliceblue;">
+          <i class="fas fa-warehouse"></i>
+        </div>
+      </ng-template>
+      <li nz-submenu nzTitle="menu2" routerLinkActive="ant-menu-submenu-open ant-menu-submenu-selected"
+        [(nzOpen)]="openMap.sub2" (nzOpenChange)="openHandler('sub2')" nzIcon="team">
+        <ul>
+          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>Team 2</li>
+        </ul>
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="file"></i>
+        <span>menu3</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="row p-0 m-0">
+        <div class="col-6 p-0">
+          <i class="trigger hover-orange" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            (click)="isCollapsed = !isCollapsed"></i>
+        </div>
+        <div class="col-6 d-flex justify-content-end" style="padding-right: 25px !important;">
+          <div>
+            <img src="../../../assets/images/profile.png" alt="" style="width: 32px; height: 32px; margin-right: 10px;">
+          </div>
+          <p>User</p>
+        </div>
+      </div>
+    </nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+    <!-- <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer> -->
+  </nz-layout>
+</nz-layout>

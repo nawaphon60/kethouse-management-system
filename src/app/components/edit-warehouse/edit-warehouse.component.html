@@ -1,0 +1,54 @@
+<div class="row mb-3">
+    <div class="col-3">
+        <p>รหัสคลังสินค้า</p>
+    </div>
+    <div class="col-9">
+        <nz-input-group [nzSuffix]="inputClearTpl">
+            <input type="text" nz-input [(ngModel)]="warehouse_id" placeholder="" />
+        </nz-input-group>
+        <ng-template #inputClearTpl><i nz-icon class="ant-input-clear-icon clear" nzTheme="fill" nzType="close-circle"
+                *ngIf="warehouse_id" (click)="warehouse_id = null"></i>
+        </ng-template>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-3">
+        <p>ชื่อคลังสินค้า</p>
+    </div>
+    <div class="col-9">
+        <nz-input-group [nzSuffix]="warehouse_nameTpl">
+            <input type="text" nz-input [(ngModel)]="warehouse_name" placeholder="" />
+        </nz-input-group>
+        <ng-template #warehouse_nameTpl><i nz-icon class="ant-input-clear-icon clear" nzTheme="fill" nzType="close-circle"
+                *ngIf="warehouse_name" (click)="warehouse_name = null"></i>
+        </ng-template>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-3">
+        <p>จังหวัด</p>
+    </div>
+    <div class="col-9">
+        <nz-select ngModel="ชลบุรี" style="width: 224px;">
+            <nz-option [nzValue]="'ชลบุรี'" nzLabel="ชลบุรี"></nz-option>
+        </nz-select>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-3">
+        <p>อำเภอ/เขต</p>
+    </div>
+    <div class="col-9">
+        <nz-select ngModel="ศรีราชา" style="width: 224px;">
+            <nz-option nzValue="ศรีราชา" nzLabel="ศรีราชา"></nz-option>
+        </nz-select>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-3">
+        <p>ที่อยู่</p>
+    </div>
+    <div class="col-9">
+        <textarea rows="4" nz-input></textarea>
+    </div>
+</div>
