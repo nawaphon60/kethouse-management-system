@@ -7,6 +7,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     NzInputModule,
     NzSelectModule,
     FormsModule,
-    NzIconModule
+    NzIconModule,
+    NzButtonModule
   ]
 })
 export class EditWarehouseModule { }

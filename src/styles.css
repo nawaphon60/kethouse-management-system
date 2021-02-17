@@ -1,4 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+button:focus {
+    /* outline: 1px dotted; */
+    outline: none !important;
+}
+button:active {
+    /* outline: 1px dotted; */
+    outline: none !important;
+}
+
 
 html, body {
     font-family: "Poppins","Prompt";
@@ -7,4 +15,63 @@ html, body {
 h1 {
     font-weight: 300;
     font-size: 30px;
+}
+
+/*-------------------- Button --------------------*/
+.btn-orange {
+    color: #fff;
+    background: #E85440;
+    border-color: #E85440;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+.btn-orange:hover {
+    color: #e03526;
+    background: #fff;
+    border-color: #e03526 !important;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.btn-outline-orange {
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+.btn-outline-orange:hover {
+    color: #e03526;
+    background: #fff;
+    border-color: #e03526 !important;
+    font-weight: 400;
+}
+
+.ant-input {
+    border-radius: 5px;
+}
+
+.ant-input:hover {
+    border-color: #E85440;
+}
+
+.ant-input:focus {
+    border-color: #E85440;
+    box-shadow: 0 0 0 2px #ea867838;
+}
+
+.ant-input-affix-wrapper {
+    border-radius: 5px;
+}
+
+.ant-input-affix-wrapper:hover {
+    border-color: #E85440;
+}
+
+.ant-input-affix-wrapper-focused {
+    border-color: #E85440;
+    box-shadow: 0 0 0 2px #ea867838 !important;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-radius: 5px;
 }

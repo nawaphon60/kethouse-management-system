@@ -1,16 +1,16 @@
 <div class="inner-content mt-3">
     <div class="row" style="margin-bottom: 50px;">
         <h1 class="col-6">คลังสินค้า</h1>
-        <div class="col-6 d-flex justify-content-end"><button nz-button class="btn-orange">เพิ่มคลังสินค้า</button>
+        <div class="col-6 d-flex justify-content-end"><button nz-button class="btn-orange" (click)="createWarehouse()">เพิ่มคลังสินค้า</button>
         </div>
     </div>
 
     <input nz-input class="search-input mb-3" placeholder="ค้นหา" nzSize="default" />
 
-    <nz-table class="mb-3" [nzData]="" [nzShowPagination]="false">
+    <nz-table class="mb-3" [nzData]="warehouselist" [nzShowPagination]="false">
         <thead>
             <tr>
-                <th>ลำดับ</th>
+                <!-- <th>ลำดับ</th> -->
                 <th>รหัสคลังสินค้า</th>
                 <th>ชื่อคลังสินค้า</th>
                 <th>รายการเคลื่อนไหวล่าสุด</th>
@@ -18,14 +18,23 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>KH0001</td>
-                <td>คลังสินค้าหลัก</td>
-                <td>17 ธ.ค. 2563 11:44</td>
+            <tr *ngFor="let obj of warehouselist">
+                <!-- <td></td> -->
+                <td>{{obj.warehouse_id}}</td>
+                <td>{{obj.warehouse_name}}</td>
+                <td>{{obj.updated_at | date: 'medium'}}</td>
                 <td>
-                    <button class="btn-edit-delete" (click)="editWarehouse('normal')"><i class="far fa-edit table-icon" style="color: #FFB229;"></i></button>
-                    <button class="btn-edit-delete"><i class="fas fa-trash-alt table-icon" style="color: #EC1C24;"></i></button>
+                    <button class="btn-edit-delete mr-5" (click)="editWarehouse(obj,'normal')">
+                        <i class="far fa-edit table-icon" style="color: #FFB229;"></i>
+                    </button>
+                    <!-- <ng-template #tplFooter let-ref="modalRef">
+                        <button nz-button class="btn-outline-orange" (click)="handleCancel()">ปิด</button>
+                        <button nz-button class="btn-orange" (click)="handleOk()">บันทึก</button>
+                    </ng-template> -->
+
+                    <button class="btn-edit-delete">
+                        <i class="fas fa-trash-alt table-icon" style="color: #EC1C24;"></i>
+                    </button>
                 </td>
             </tr>
         </tbody>

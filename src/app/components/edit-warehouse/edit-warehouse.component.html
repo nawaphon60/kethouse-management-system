@@ -4,10 +4,10 @@
     </div>
     <div class="col-9">
         <nz-input-group [nzSuffix]="inputClearTpl">
-            <input type="text" nz-input [(ngModel)]="warehouse_id" placeholder="" />
+            <input type="text" nz-input [(ngModel)]="save_model.warehouse_id" placeholder="" />
         </nz-input-group>
         <ng-template #inputClearTpl><i nz-icon class="ant-input-clear-icon clear" nzTheme="fill" nzType="close-circle"
-                *ngIf="warehouse_id" (click)="warehouse_id = null"></i>
+                *ngIf="save_model.warehouse_id" (click)="save_model.warehouse_id = null"></i>
         </ng-template>
     </div>
 </div>
@@ -17,10 +17,10 @@
     </div>
     <div class="col-9">
         <nz-input-group [nzSuffix]="warehouse_nameTpl">
-            <input type="text" nz-input [(ngModel)]="warehouse_name" placeholder="" />
+            <input type="text" nz-input [(ngModel)]="save_model.warehouse_name" placeholder="" />
         </nz-input-group>
-        <ng-template #warehouse_nameTpl><i nz-icon class="ant-input-clear-icon clear" nzTheme="fill" nzType="close-circle"
-                *ngIf="warehouse_name" (click)="warehouse_name = null"></i>
+        <ng-template #warehouse_nameTpl><i nz-icon class="ant-input-clear-icon clear" nzTheme="fill"
+                nzType="close-circle" *ngIf="save_model.warehouse_name" (click)="save_model.warehouse_name = null"></i>
         </ng-template>
     </div>
 </div>
@@ -52,3 +52,10 @@
         <textarea rows="4" nz-input></textarea>
     </div>
 </div>
+<!-- <div style="border-bottom: 1px solid gray;"></div>
+<button nz-button class="btn-outline-orange" (click)="closeModal()">ปิด</button> -->
+
+<footer class="d-flex justify-content-end">
+    <button nz-button class="btn-outline-orange me-3" (click)="closeModal()">ปิด</button>
+    <button nz-button class="btn-orange" (click)="state == 'create'? create():update()">{{state == 'create'? 'สร้าง':'บันทึก'}}</button>
+</footer>
