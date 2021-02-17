@@ -2,7 +2,7 @@
     overflow: hidden;
 } */
 
-::ng-deep .clear svg {
+::ng-deep svg {
     margin-top: -3px !important;
-    color: #E85440;
+    /* color: #E85440; */
 }
