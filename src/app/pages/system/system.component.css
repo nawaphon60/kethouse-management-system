@@ -41,7 +41,7 @@ nz-sider span {
 }
 
 .menu-icon {
-    margin-right: 5px;
+    /* margin-right: 5px; */
 }
 
 ::ng-deep .ant-menu-dark {
@@ -91,7 +91,7 @@ nz-footer {
     height: 100vh;
 }
 
-::ng-deep .anticon svg {
+::ng-deep .menu-icon svg {
     margin-top: -6px;
 }
 

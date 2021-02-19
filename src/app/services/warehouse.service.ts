@@ -12,8 +12,8 @@ export class WarehouseService {
     private http: HttpClient
   ) { }
 
-  getAll() {
-    return this.http.get(`${api_url}/warehouse`).toPromise()
+  getAll(data: any) {
+    return this.http.get(`${api_url}/warehouse`, data).toPromise()
   }
 
   create(data: any) {
@@ -22,5 +22,9 @@ export class WarehouseService {
 
   update(data: any, id: any) {
     return this.http.put(`${api_url}/warehouse/${id}`, data).toPromise()
+  }
+
+  delete(id: any) {
+    return this.http.delete(`${api_url}/warehouse/${id}`).toPromise()
   }
 }

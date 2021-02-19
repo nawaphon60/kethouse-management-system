@@ -2,14 +2,14 @@ button:focus {
     /* outline: 1px dotted; */
     outline: none !important;
 }
+
 button:active {
     /* outline: 1px dotted; */
     outline: none !important;
 }
 
-
 html, body {
-    font-family: "Poppins","Prompt";
+    font-family: "Poppins", "Prompt";
 }
 
 h1 {
@@ -18,6 +18,48 @@ h1 {
 }
 
 /*-------------------- Button --------------------*/
+
+.ant-btn-primary {
+    color: #fff;
+    background: #E85440;
+    border-color: #E85440;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+.ant-btn-primary:hover {
+    color: #e03526;
+    background: #fff;
+    border-color: #e03526 !important;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.ant-btn {
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+.ant-btn:focus {
+    border-radius: 5px;
+    font-weight: 400;
+    color: #000;
+    border-color: #d9d9d9;
+}
+
+.ant-btn:hover {
+    color: #e03526;
+    background: #fff;
+    border-color: #e03526 !important;
+    font-weight: 400;
+}
+
+.btn-orange:focus {
+    color: #fff;
+    background: #E85440;
+    border-color: #E85440;
+}
+
 .btn-orange {
     color: #fff;
     background: #E85440;
@@ -72,6 +114,37 @@ h1 {
     box-shadow: 0 0 0 2px #ea867838 !important;
 }
 
-.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+/* .ant-select:not(.ant-select-customize-input) .ant-select-selector {
     border-radius: 5px;
+} */
+
+/* ::ng-deep.ant-select {
+    width: 100px !important;
+    border-radius: 5px !important;
+} */
+
+.ant-select-selector {
+    border-radius: 5px !important;
+}
+
+::ng-deep .ant-select-selector:hover {
+    border-color: #E85440;
+}
+
+.ant-pagination-item-active {
+    background: #fff;
+    border-color: #E85440;
+}
+
+.ant-pagination-item-active a {
+    color: #E85440;
+}
+
+.ant-pagination-item-active:hover {
+    background: #fff;
+    border-color: #E85440;
+}
+
+.ant-pagination-item-active:hover a {
+    color: #E85440;
 }

@@ -12,7 +12,12 @@ export class WarehouseComponent implements OnInit {
   isConfirmLoading = false;
   warehouselist: any[] = []
   count: any = null
-  editmodal: NzModalRef<EditWarehouseComponent, any> = null
+  // editmodal: NzModalRef<EditWarehouseComponent, any> = null
+  model_search = {
+    search: "",
+    warehouse_id: "",
+    warehouse_name: ""
+  }
 
   constructor(
     private ModalService: NzModalService,
@@ -21,13 +26,13 @@ export class WarehouseComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAll()
-    // this.editWarehouse('narmol')
+    // this.createWarehouse('narmol')
   }
 
   async getAll() {
     let res: any = null
     try {
-      res = await this.warehouseService.getAll()
+      res = await this.warehouseService.getAll({})
       console.log(res);
 
       this.warehouselist = res
@@ -37,7 +42,17 @@ export class WarehouseComponent implements OnInit {
     }
   }
 
-  createWarehouse(): void {
+  search() {
+    this.warehouseService.getAll(this.model_search).then((res: any) => {
+      this.warehouselist = res
+      console.log(res);
+      
+    }).catch((err: any) => {
+
+    })
+  }
+
+  createWarehouse(str: string): void {
     const modalRef = this.ModalService.create({
       nzTitle: 'เพิ่มคลังสินค้า',
       nzWidth: '40%',
@@ -58,6 +73,7 @@ export class WarehouseComponent implements OnInit {
       }
     })
   }
+
   editWarehouse(obj: any): void {
     const modalRef = this.ModalService.create({
       nzTitle: 'แก้ไขคลังสินค้า',
@@ -73,6 +89,23 @@ export class WarehouseComponent implements OnInit {
       modalRef.unsubscribe()
       if (r) {
         this.getAll()
+      }
+    })
+  }
+
+  deleteWarehouse(id: any) {
+    this.ModalService.confirm({
+      nzTitle: 'ยืนยันการลบคลังสินค้า',
+      nzContent: 'ต้องการลบคลังสินค้าใช่หรือไม่ ?',
+      nzOkText: 'ยืนยัน',
+      nzCancelText: 'ยกเลิก',
+      nzStyle: {
+        top: '40%'
+      },
+      nzOnOk: () => {
+        this.warehouseService.delete(id).then((res: any) => {
+          this.getAll()
+        })
       }
     })
   }

@@ -8,7 +8,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzModalModule } from 'ng-zorro-antd/modal';
-
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [WarehouseComponent],
@@ -19,7 +20,9 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
     NzInputModule,
     NzTableModule,
     NzPaginationModule,
-    NzModalModule
+    NzModalModule,
+    NzIconModule,
+    FormsModule
   ]
 })
 export class WarehouseModule { }
