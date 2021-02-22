@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
-import { EditWarehouseComponent } from './../../../components/edit-warehouse/edit-warehouse.component'
+import { EditWarehouseComponent } from 'src/app/components/edit-warehouse/edit-warehouse.component'
 import { WarehouseService } from 'src/app/services/warehouse.service'
 @Component({
   selector: 'app-warehouse',
@@ -16,7 +16,8 @@ export class WarehouseComponent implements OnInit {
   model_search = {
     search: "",
     warehouse_id: "",
-    warehouse_name: ""
+    warehouse_name: "",
+    numbers_ofproducts: ""
   }
 
   constructor(

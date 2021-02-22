@@ -26,6 +26,14 @@ export class SystemComponent implements OnInit {
     if (this.href == '/system/warehouse') {
       this.openMap.sub1 = true
     }
+
+    if (this.href == '/system/products') {
+      this.openMap.sub3 = true
+    }
+    
+    if (this.href == '/system/transfer') {
+      this.openMap.sub3 = true
+    }
   }
 
   openHandler(value: string): void {

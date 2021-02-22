@@ -7,7 +7,9 @@ const routes: Routes = [
   { 
     path: '', component: SystemComponent,
     children: [
-      { path: 'warehouse', loadChildren: () => import('./warehouse/warehouse.module').then(m => m.WarehouseModule) }
+      { path: 'warehouse', loadChildren: () => import('./warehouse/warehouse-list/warehouse.module').then(m => m.WarehouseModule) },
+      { path: 'products', loadChildren: () => import('./products/products/products.module').then(m => m.ProductsModule) },
+      { path: 'transfer', loadChildren: () => import('./products/transfer/transfer.module').then(m => m.TransferModule) }
     ]
    }
 ];

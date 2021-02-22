@@ -40,9 +40,9 @@ nz-sider span {
     width: 0px !important;
 }
 
-.menu-icon {
-    /* margin-right: 5px; */
-}
+/* .menu-icon {
+    margin-right: 5px;
+} */
 
 ::ng-deep .ant-menu-dark {
     background-color: #1a1a1a !important;
@@ -97,4 +97,9 @@ nz-footer {
 
 .hover-orange:hover {
     color: #e85440;
+}
+
+::ng-deep .ant-table-thead > tr > th {
+    color: rgba(0, 0, 0, 0.85);
+    background: #c2dfff;
 }

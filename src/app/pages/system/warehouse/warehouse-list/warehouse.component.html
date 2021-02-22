@@ -4,7 +4,7 @@
         <div class="col-6 d-flex justify-content-end"><button nz-button class="btn-orange" (click)="createWarehouse('normal')">เพิ่มคลังสินค้า</button>
         </div>
     </div>
-
+    
     <nz-input-group class="mb-3" [nzPrefix]="prefixTemplateSearch" style="width: 400px;">
         <input nz-input class="ml-3" placeholder="ค้นหา" nzSize="default" name="search" (keyup.enter)="search()" [(ngModel)]="model_search.search">
     </nz-input-group>
@@ -14,10 +14,11 @@
         <thead>
             <tr>
                 <!-- <th>ลำดับ</th> -->
-                <th>รหัสคลังสินค้า</th>
-                <th>ชื่อคลังสินค้า</th>
-                <th>รายการเคลื่อนไหวล่าสุด</th>
-                <th></th>
+                <th class="col-1">รหัสคลังสินค้า</th>
+                <th class="col-4">ชื่อคลังสินค้า</th>
+                <th class=" col-2 text-end">จำนวนสินค้า</th>
+                <th class="col-3 text-center">รายการเคลื่อนไหวล่าสุด</th>
+                <th class="col-2"></th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +26,8 @@
                 <!-- <td></td> -->
                 <td>{{obj.warehouse_id}}</td>
                 <td>{{obj.warehouse_name}}</td>
-                <td>{{obj.updated_at | date: 'medium'}}</td>
+                <td class="text-end">{{obj.numbers_ofproducts}}</td>
+                <td class="text-center">{{obj.updated_at | date: 'medium'}}</td>
                 <td class="py-1">
                     <button class="btn-edit-delete me-3" (click)="editWarehouse(obj)">
                         <i class="far fa-edit table-icon" style="color: #faad14;"></i>

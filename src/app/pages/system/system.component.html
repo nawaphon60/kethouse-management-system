@@ -2,13 +2,17 @@
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="240px" [nzTrigger]="null">
     <div class="logo"></div>
     <ul nz-menu nzTheme="dark" nzMode="inline">
+
+      <!-- Dashboard -->
       <a href="">
-        <li nz-menu-item>
+        <li nz-menu-item >
           <i class="fas fa-chart-line me-3"></i>
           <span>Dashboard</span>
         </li>
       </a>
-      <!-- <li nz-submenu routerLinkActive="ant-menu-submenu-open" [(nzOpen)]="openMap.sub1"
+
+      <!-- Warehouse -->
+      <li nz-submenu routerLinkActive="ant-menu-submenu-open" [(nzOpen)]="openMap.sub1"
         (nzOpenChange)="openHandler('sub1')">
         <span title><i class="fas fa-warehouse me-3"></i><span>Warehouse</span></span>
         <ul>
@@ -23,34 +27,30 @@
         <div style="color: aliceblue;">
           <i class="fas fa-warehouse"></i>
         </div>
-      </ng-template> -->
-      <a routerLink="/system/warehouse">
-        <li nz-menu-item routerLinkActive="ant-menu-submenu-open" routerLinkActive="ant-menu-item-selected">
+      </ng-template>
+      
+      <!-- <a routerLink="/system/warehouse">
+        <li nz-menu-item routerLinkActive="ant-menu-item-selected" [(nzOpen)]="openMap.sub1" (nzOpenChange)="openHandler('sub1')">
           <i class="fas fa-warehouse me-3"></i>
           <span>Warehouse</span>
         </li>
-      </a>
-      <li nz-menu-item>
-        <i class="fas fa-box me-3"></i>
-        <span>Products</span>
-      </li>
-      <li nz-submenu routerLinkActive="ant-menu-submenu-open" [(nzOpen)]="openMap.sub1"
-        (nzOpenChange)="openHandler('sub1')">
-        <span title><i class="fas fa-warehouse me-3"></i><span>Products</span></span>
+      </a> -->
+      
+      <!-- Products -->
+      <li nz-submenu  routerLinkActive="ant-menu-submenu-open ant-menu-submenu-selected"
+      [(nzOpen)]="openMap.sub3" (nzOpenChange)="openHandler('sub3')">
+        <span title><i class="fas fa-box me-3"></i><span>Products</span></span>
         <ul>
-          <a routerLink="">
-            <li nz-menu-item routerLinkActive="ant-menu-item-selected">สินค้า</li>
+          <a routerLink="/system/products">
+            <li nz-menu-item routerLinkActive="ant-menu-item-selected">Products</li>
           </a>
-          <a href="">
-            <li nz-menu-item routerLinkActive="">รายการโอนสินค้า</li>
+          <a routerLink="/system/transfer">
+            <li nz-menu-item routerLinkActive="ant-menu-item-selected">Transfer</li>
           </a>
         </ul>
       </li>
-      <ng-template #warehouseIcon>
-        <div style="color: aliceblue;">
-          <i class="fas fa-warehouse"></i>
-        </div>
-      </ng-template>
+
+      <!-- Orders -->
       <li nz-menu-item>
         <i class="fas fa-shopping-cart me-3"></i>
         <span>Orders</span>
