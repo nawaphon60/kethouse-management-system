@@ -14,7 +14,7 @@
         <thead>
             <tr>
                 <!-- <th>ลำดับ</th> -->
-                <th class="col-1">รหัสคลังสินค้า</th>
+                <th class="col-1 text-center">รหัสคลังสินค้า</th>
                 <th class="col-4">ชื่อคลังสินค้า</th>
                 <th class=" col-2 text-end">จำนวนสินค้า</th>
                 <th class="col-3 text-center">รายการเคลื่อนไหวล่าสุด</th>
@@ -24,7 +24,7 @@
         <tbody>
             <tr *ngFor="let obj of warehouselist">
                 <!-- <td></td> -->
-                <td>{{obj.warehouse_id}}</td>
+                <td class="text-center">{{obj.warehouse_id}}</td>
                 <td>{{obj.warehouse_name}}</td>
                 <td class="text-end">{{obj.numbers_ofproducts}}</td>
                 <td class="text-center">{{obj.updated_at | date: 'medium'}}</td>
