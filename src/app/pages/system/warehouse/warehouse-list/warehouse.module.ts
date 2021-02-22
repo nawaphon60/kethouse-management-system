@@ -10,11 +10,11 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { FormsModule } from '@angular/forms';
-import { Comp1Component } from 'src/app/components/comp1/comp1.component'
-import { from } from 'rxjs';
+// import { Comp1Component } from 'src/app/components/comp1/comp1.component'
+import { Comp1Module } from 'src/app/components/comp1/comp1.module';
 
 @NgModule({
-  declarations: [WarehouseComponent, Comp1Component],
+  declarations: [WarehouseComponent],
   imports: [
     CommonModule,
     WarehouseRoutingModule,
@@ -24,7 +24,8 @@ import { from } from 'rxjs';
     NzPaginationModule,
     NzModalModule,
     NzIconModule,
-    FormsModule
+    FormsModule,
+    Comp1Module
   ]
 })
 export class WarehouseModule { }

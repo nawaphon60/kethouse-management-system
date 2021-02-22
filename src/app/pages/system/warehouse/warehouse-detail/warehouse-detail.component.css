@@ -1,0 +1,22 @@
+.inner-content {
+    padding: 24px;
+    background: #fff;
+    min-height: 360px;
+}
+
+.btn-edit-delete {
+    border: none;
+    background: #fff;
+    box-shadow: 1px 1px 4px 0px #00000038 !important;
+    border-radius: 5px;
+    padding: 3px 6px;
+    /* transition: .3s; */
+}
+.btn-edit-delete:hover {
+    transform: scale(1.1);
+}
+
+.table-icon {
+    font-size: 26px;
+}
+

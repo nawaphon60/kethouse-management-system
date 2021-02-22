@@ -15,6 +15,10 @@ export class WarehouseService {
   getAll(data: any) {
     return this.http.get(`${api_url}/warehouse`, data).toPromise()
   }
+  
+  getByID(id: any) {
+    return this.http.get(`${api_url}/warehouse/${id}`).toPromise()
+  }
 
   create(data: any) {
     return this.http.post(`${api_url}/warehouse`, data).toPromise()

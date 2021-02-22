@@ -76,6 +76,8 @@ export class WarehouseComponent implements OnInit {
   }
 
   editWarehouse(obj: any): void {
+    console.log(obj);
+    
     const modalRef = this.ModalService.create({
       nzTitle: 'แก้ไขคลังสินค้า',
       nzWidth: '40%',

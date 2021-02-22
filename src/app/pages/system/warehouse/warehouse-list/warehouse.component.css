@@ -20,3 +20,11 @@
     font-size: 26px;
 }
 
+::ng-deep .ant-table-cell a {
+    color: #000;
+}
+
+::ng-deep .ant-table-cell a:hover {
+    color: #e85440;
+}
+

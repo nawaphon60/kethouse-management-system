@@ -5,7 +5,7 @@
 
       <!-- Dashboard -->
       <a href="">
-        <li nz-menu-item >
+        <li nz-menu-item>
           <i class="fas fa-chart-line me-3"></i>
           <span>Dashboard</span>
         </li>
@@ -28,17 +28,17 @@
           <i class="fas fa-warehouse"></i>
         </div>
       </ng-template> -->
-      
+
       <a routerLink="/system/warehouse">
         <li nz-menu-item routerLinkActive="ant-menu-item-selected">
           <i class="fas fa-warehouse me-3"></i>
           <span>Warehouse</span>
         </li>
       </a>
-      
+
       <!-- Products -->
-      <li nz-submenu  routerLinkActive="ant-menu-submenu-open ant-menu-submenu-selected"
-      [(nzOpen)]="openMap.sub3" (nzOpenChange)="openHandler('sub3')">
+      <li nz-submenu routerLinkActive="ant-menu-submenu-open ant-menu-submenu-selected" [(nzOpen)]="openMap.sub3"
+        (nzOpenChange)="openHandler('sub3')">
         <span title><i class="fas fa-box me-3"></i><span>Products</span></span>
         <ul>
           <a routerLink="/system/products">

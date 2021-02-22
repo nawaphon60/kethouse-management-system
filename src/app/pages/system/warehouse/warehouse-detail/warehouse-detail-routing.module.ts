@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { WarehouseDetailComponent } from './warehouse-detail.component';
 
-const routes: Routes = [{ path: '', component: WarehouseDetailComponent }];
+const routes: Routes = [
+  { path: ':id', component: WarehouseDetailComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
