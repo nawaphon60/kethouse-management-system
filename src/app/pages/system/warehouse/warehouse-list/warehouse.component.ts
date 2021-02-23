@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { EditWarehouseComponent } from 'src/app/components/edit-warehouse/edit-warehouse.component'
 import { WarehouseService } from 'src/app/services/warehouse.service'
 @Component({
