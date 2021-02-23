@@ -148,3 +148,7 @@ h1 {
 .ant-pagination-item-active:hover a {
     color: #E85440;
 }
+
+.ant-modal-title {
+    font-size: 20px;
+}
