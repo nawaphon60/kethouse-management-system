@@ -10,11 +10,12 @@ import { WarehouseService } from 'src/app/services/warehouse.service'
   styleUrls: ['./warehouse-detail.component.css']
 })
 export class WarehouseDetailComponent implements OnInit, OnDestroy {
-  warehouse: {
+  warehouse: any = {
     warehouse_name: '',
     updated_at: ''
   }
   subscribt = null
+  checked = false
 
   constructor(
     private activateroute: ActivatedRoute,

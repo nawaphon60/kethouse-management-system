@@ -3,6 +3,11 @@
     <div class="logo"></div>
     <ul nz-menu nzTheme="dark" nzMode="inline">
 
+      <div class="loading" *ngIf="isLoading">
+        <ng-template #indicatorTemplate><i nz-icon nzType="loading"></i></ng-template>
+        <nz-spin nzSimple [nzIndicator]="indicatorTemplate"> </nz-spin>
+    </div>
+
       <!-- Dashboard -->
       <a href="">
         <li nz-menu-item>
@@ -30,7 +35,7 @@
       </ng-template> -->
 
       <a routerLink="/system/warehouse">
-        <li nz-menu-item routerLinkActive="ant-menu-item-selected">
+        <li nz-menu-item routerLinkActive="ant-menu-item-selected" (nzOpen)="openMap.sub1" (nzOpenChange)="openHandler('sub1')">
           <i class="fas fa-warehouse me-3"></i>
           <span>Warehouse</span>
         </li>

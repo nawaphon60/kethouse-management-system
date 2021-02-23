@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
-
 @NgModule({
   declarations: [EditWarehouseComponent],
   imports: [

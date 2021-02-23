@@ -10,6 +10,9 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { FormsModule } from '@angular/forms';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+
 
 @NgModule({
   declarations: [WarehouseDetailComponent],
@@ -22,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     NzPaginationModule,
     NzModalModule,
     NzIconModule,
-    FormsModule
+    FormsModule,
+    NzCheckboxModule,
+    NzTagModule
   ]
 })
 export class WarehouseDetailModule { }

@@ -14,6 +14,7 @@ export class SystemComponent implements OnInit {
     sub2: false,
     sub3: false
   };
+  isLoading = false
 
   constructor(
     private router: Router
@@ -27,8 +28,10 @@ export class SystemComponent implements OnInit {
       this.openMap.sub1 = true
     }
     
-    if (this.href == '/system/warehouse-detail') {
+    if (this.href == '/system/warehouse-detail/1') {
       this.openMap.sub1 = true
+      console.log(this.openMap.sub1);
+      
     }
 
     if (this.href == '/system/products') {

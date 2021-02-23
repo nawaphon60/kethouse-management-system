@@ -12,6 +12,7 @@
     padding: 3px 6px;
     /* transition: .3s; */
 }
+
 .btn-edit-delete:hover {
     transform: scale(1.1);
 }
@@ -20,3 +21,23 @@
     font-size: 26px;
 }
 
+.ant-tag-orange {
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 3px;
+    margin-right: 0;
+}
+
+.ant-tag-cyan {
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 3px;
+    margin-right: 0;
+}
+
+.ant-tag-green {
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 3px;
+    margin-right: 0;
+}

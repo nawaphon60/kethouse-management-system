@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { NzModalService } from 'ng-zorro-antd/modal';
+import { NzModalService, NzModalRef } from 'ng-zorro-antd/modal';
 import { EditWarehouseComponent } from 'src/app/components/edit-warehouse/edit-warehouse.component'
 import { WarehouseService } from 'src/app/services/warehouse.service'
 @Component({
@@ -19,10 +19,12 @@ export class WarehouseComponent implements OnInit {
     warehouse_name: "",
     numbers_ofproducts: ""
   }
+  confirmModal?: NzModalRef; // For testing by now
 
   constructor(
     private ModalService: NzModalService,
-    private warehouseService: WarehouseService
+    private warehouseService: WarehouseService,
+    private nzmodal: NzModalService
   ) { }
 
   ngOnInit(): void {
@@ -112,6 +114,18 @@ export class WarehouseComponent implements OnInit {
       }
     })
   }
+
+  // showConfirm(id: any): void {
+  //   this.confirmModal = this.nzmodal.confirm({
+  //     nzTitle: 'Do you Want to delete these items?',
+  //     nzContent: 'When clicked the OK button, this dialog will be closed after 1 second',
+  //     nzOnOk: () =>
+  //       new Promise((resolve, reject) => {
+  //         this.deleteWarehouse(id)
+  //         setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
+  //       }).catch(() => console.log('Oops errors!'))
+  //   });
+  // }
 
   // handleOk(): void {
   //   let model = this.editmodal.componentInstance.update()
