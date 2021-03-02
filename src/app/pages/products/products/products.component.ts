@@ -16,7 +16,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteProduct(str: string) {
+  deleteProduct() {
     const modalRef = this.ModalService.create({
       // nzTitle: 'ปรับจำนวนคงเหลือในคลังสินค้า',
       nzWidth: '40%',
