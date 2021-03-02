@@ -5,6 +5,7 @@ import { SET_PROFILE } from 'src/app/actions';
 import { WarehouseService } from 'src/app/services/warehouse.service'
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { ChangeComponent } from 'src/app/components/change/change.component'
+import { DeleteProductComponent } from 'src/app/components/delete-product/delete-product.component'
 
 @Component({
   selector: 'app-warehouse-detail',
@@ -27,8 +28,10 @@ export class WarehouseDetailComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnDestroy() {
-    if (this.subscribt)
+    if (this.subscribt) {
       this.subscribt.unsubscribe()
+    }
+    
   }
 
   ngOnInit(): void {
@@ -41,6 +44,7 @@ export class WarehouseDetailComponent implements OnInit, OnDestroy {
 
     })
     this.getByID(id)
+    // this.deleteProduct('narmol')
   }
 
   async getByID(id: any) {
@@ -55,16 +59,35 @@ export class WarehouseDetailComponent implements OnInit, OnDestroy {
     }
   }
 
-  Change(obj: any): void {
-    console.log(obj);
+  Change(): void {
+    // console.log(obj);
 
     const modalRef = this.ModalService.create({
       nzTitle: 'ปรับจำนวนคงเหลือในคลังสินค้า',
       nzWidth: '40%',
       nzContent: ChangeComponent,
       nzComponentParams: {
-        model: obj,
+        // model: obj,
         state: "edit"
+      },
+      nzClosable: false,
+      nzFooter: null
+    }).afterClose.subscribe((r: boolean) => {
+      modalRef.unsubscribe()
+      if (r) {
+        // this.getByID()
+      }
+    })
+  }
+
+  deleteProduct(str: string) {
+    const modalRef = this.ModalService.create({
+      // nzTitle: 'ปรับจำนวนคงเหลือในคลังสินค้า',
+      nzWidth: '40%',
+      nzContent: DeleteProductComponent,
+      nzComponentParams: {
+        // model: obj,
+        // state: "edit"
       },
       nzClosable: false,
       nzFooter: null

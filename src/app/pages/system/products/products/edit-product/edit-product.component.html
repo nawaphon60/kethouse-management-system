@@ -1,5 +1,5 @@
 <div class="inner-content mt-3">
-    <h1>สร้างสินค้า</h1>
+    <h1>แก้ไขสินค้า</h1>
     <div class="mt-5">
         <div class="submenu-icon d-inline-block me-2"><i class="fas fa-box icon"></i></div>
         <h2 class="d-inline-block">รายละเอียดสินค้า</h2>
@@ -76,7 +76,9 @@
 
         <div class="col-6">
             <div class="row">
-                <div class="mt-3"><p>รูปสินค้า</p></div>
+                <div class="mt-3">
+                    <p>รูปสินค้า</p>
+                </div>
                 <nz-upload class="avatar-uploader" nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                     nzName="avatar" nzListType="picture-card" [nzShowUploadList]="false" [nzBeforeUpload]="beforeUpload"
                     (nzChange)="handleChange($event)">
@@ -96,7 +98,7 @@
                     </ng-container>
                     <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
                 </nz-upload>
-                
+
                 <nz-upload class="avatar-uploader" nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                     nzName="avatar" nzListType="picture-card" [nzShowUploadList]="false" [nzBeforeUpload]="beforeUpload"
                     (nzChange)="handleChange($event)">
@@ -171,35 +173,28 @@
         <h2 class="d-inline-block">คลังสินค้า</h2>
     </div>
 
-    <div class="row">
-        <div class="col-6">
-            <div class="row mt-3">
-                <div class="col-3">
-                    <p>จำนวนสินค้า</p>
-                </div>
-                <div class="col-5">
-                    <input nz-input nzSize="default" />
-                </div>
-            </div>
-            <div class="row mt-1">
-                <div class="col-3">
-                    <p>เข้าคลังสินค้า</p>
-                </div>
-                <div class="col-5">
-                    <nz-select ngModel="select">
-                        <nz-option nzValue="select" nzLabel="เลือกคลังสินค้า" nzDisabled></nz-option>
-                        <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-                        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-                    </nz-select>
-                </div>
-                <div class="col-3">
-                    <button nz-button class="btn-orange">
-                        <a routerLink="/system/create-product"><i class="fas fa-plus-circle me-1"></i>เพิ่มคลังสินค้า</a>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <nz-table #basicTable class="mt-3 col-8">
+        <thead>
+            <tr>
+                <th>ลำดับ</th>
+                <th>ชื่อคลังสินค้า</th>
+                <th>จำนวนสินค้า</th>
+                <th>พร้อมจำหน่าย</th>
+                <th>ถูกจอง</th>
+                <th>กำลังเคลื่อนย้าย</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>คลังสินค้าหลัก</td>
+                <td>20 ชิ้น</td>
+                <td>5 ชิ้น</td>
+                <td>5 ชิ้น</td>
+                <td>10 ชิ้น</td>
+            </tr>
+        </tbody>
+    </nz-table>
 
     <footer class="d-flex justify-content-end">
         <a routerLink="/system/products"><button nz-button class="btn-outline-orange me-3">ยกเลิก</button></a>

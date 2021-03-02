@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import getISOWeek from 'date-fns/getISOWeek';
-import { NzDatePickerComponent } from 'ng-zorro-antd/date-picker';
-
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { DeleteProductComponent } from 'src/app/components/delete-product/delete-product.component'
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -10,10 +9,32 @@ import { NzDatePickerComponent } from 'ng-zorro-antd/date-picker';
 export class ProductsComponent implements OnInit {
   checked = false
 
-  constructor() { }
+  constructor(
+    private ModalService: NzModalService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  deleteProduct(str: string) {
+    const modalRef = this.ModalService.create({
+      // nzTitle: 'ปรับจำนวนคงเหลือในคลังสินค้า',
+      nzWidth: '40%',
+      nzContent: DeleteProductComponent,
+      nzComponentParams: {
+        // model: obj,
+        // state: "edit"
+      },
+      nzClosable: false,
+      nzFooter: null
+    }).afterClose.subscribe((r: boolean) => {
+      modalRef.unsubscribe()
+      if (r) {
+        // this.getByID()
+      }
+    })
+  }
+
+  
   
 }
