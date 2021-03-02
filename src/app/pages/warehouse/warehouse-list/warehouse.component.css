@@ -11,7 +11,6 @@
     border-radius: 5px;
     padding: 3px 6px;
     margin-top: 5px;
-    /* transition: .3s; */
 }
 
 .btn-edit-delete:hover {
@@ -51,4 +50,15 @@
     font-size: 14px;
     font-weight: 500;
     border-radius: 3px;
+}
+
+.submenu-icon {
+    color: white;
+    background: #E85440;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 6px;
+    font-size: 16px;
 }

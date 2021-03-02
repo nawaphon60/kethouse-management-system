@@ -36,8 +36,8 @@ export class TransferFilterComponent implements OnInit {
     {
       key: '2',
       transfer_id: 'TF-2530203001',
-      ow: 'คลังสินค้า A',
-      dw: 'คลังสินค้า B',
+      ow: 'คลังสินค้า B',
+      dw: 'คลังสินค้า A',
       product: 'Product02',
       num_ofproduct: 100,
       product_value: 250,
@@ -47,7 +47,7 @@ export class TransferFilterComponent implements OnInit {
     {
       key: '3',
       transfer_id: 'TF-2530203001',
-      ow: 'คลังสินค้า A',
+      ow: 'คลังสินค้า C',
       dw: 'คลังสินค้า B',
       product: 'Product03',
       num_ofproduct: 250,

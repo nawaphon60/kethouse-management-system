@@ -59,15 +59,15 @@ export class WarehouseDetailComponent implements OnInit, OnDestroy {
     }
   }
 
-  Change(): void {
-    // console.log(obj);
+  Change(obj: any): void {
+    console.log(obj);
 
     const modalRef = this.ModalService.create({
       nzTitle: 'ปรับจำนวนคงเหลือในคลังสินค้า',
       nzWidth: '40%',
       nzContent: ChangeComponent,
       nzComponentParams: {
-        // model: obj,
+        model: obj,
         state: "edit"
       },
       nzClosable: false,

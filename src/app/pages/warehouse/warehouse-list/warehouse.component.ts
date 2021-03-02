@@ -55,9 +55,9 @@ export class WarehouseComponent implements OnInit {
     })
   }
 
-  createWarehouse(str: string): void {
+  createWarehouse(str: string, tplTitle: TemplateRef<{}>): void {
     const modalRef = this.ModalService.create({
-      nzTitle: 'เพิ่มคลังสินค้า',
+      nzTitle: tplTitle,
       nzWidth: '40%',
       nzContent: EditWarehouseComponent,
       nzComponentParams: {

@@ -10,8 +10,6 @@ import { WarehouseService } from 'src/app/services/warehouse.service'
 export class EditWarehouseComponent implements OnInit {
   @Input() model: any
   @Input() state: string
-  // warehouse_id: string | null = null;
-  // warehouse_name: string | null = null;
   textValue: string | null = null;
   save_model: any | null = null
   

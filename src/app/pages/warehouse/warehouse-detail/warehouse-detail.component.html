@@ -41,19 +41,17 @@
                 <td class="text-end">5</td>
                 <td class="text-center">{{warehouse.updated_at | date: 'medium'}}</td>
                 <td class="py-1">
-                    <button class="btn-edit-delete me-3">
-                        <i class="far fa-edit table-icon" style="color: #868686;"></i>
-                    </button>
-                    <!-- <ng-template #tplFooter let-ref="modalRef">
-                        <button nz-button class="btn-outline-orange" (click)="handleCancel()">ปิด</button>
-                        <button nz-button class="btn-orange" (click)="handleOk()">บันทึก</button>
-                    </ng-template> -->
-
+                    <a routerLink="/system/edit-product">
+                        <button class="btn-edit-delete me-3">
+                            <i class="far fa-edit table-icon" style="color: #868686;"></i>
+                        </button>
+                    </a>
+                    
                     <button class="btn-edit-delete me-3" (click)="deleteProduct('narmol')">
                         <i class="fas fa-trash-alt table-icon" style="color: #868686;"></i>
                     </button>
 
-                    <nz-tag type="button" [nzColor]="'blue'" (click)="Change()">ปรับ</nz-tag>
+                    <nz-tag type="button" [nzColor]="'blue'" (click)="Change(warehouse)">ปรับ</nz-tag>
                 </td>
             </tr>
         </tbody>

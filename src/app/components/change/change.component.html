@@ -19,7 +19,7 @@
         <p>ชื่อคลังสินค้า</p>
     </div>
     <div class="col-9">
-        คลังสินค้าหลัก
+        <p>คลังสินค้าหลัก</p>
     </div>
 </div>
 <div class="row mb-3">
@@ -27,18 +27,23 @@
         <p>ประเภทปรับจำนวน</p>
     </div>
     <div class="col-9">
-        <nz-select ngModel="โอนย้าย">
-            <nz-option [nzValue]="'โอนย้าย'" nzLabel="โอนย้าย"></nz-option>
+        <nz-select [(ngModel)]="status">
+            <nz-option [nzValue]="1" nzLabel="นำเข้า"></nz-option>
+            <nz-option [nzValue]="2" nzLabel="โอนย้าย"></nz-option>
+            <nz-option [nzValue]="3" nzLabel="ชำรุด"></nz-option>
+            <nz-option [nzValue]="4" nzLabel="นำออก"></nz-option>
         </nz-select>
     </div>
 </div>
-<div class="row mb-3">
+<div class="row mb-3" *ngIf="status == 2">
     <div class="col-3">
         <p>ปลายทางที่ย้าย</p>
     </div>
     <div class="col-9">
         <nz-select ngModel="คลังสินค้า A">
             <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
+            <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
+            <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
         </nz-select>
     </div>
 </div>
@@ -46,12 +51,12 @@
     <div class="col-3">
         <p>จำนวน</p>
     </div>
-    <div class="col-9">
+    <div class="col-3">
         <nz-input-group [nzSuffix]="warehouse_nameTpl">
-            <input type="text" nz-input [(ngModel)]="save_model.warehouse_name" placeholder="" />
+            <input type="text" nz-input [(ngModel)]="save_model.numbers_ofproducts" placeholder="" />
         </nz-input-group>
         <ng-template #warehouse_nameTpl><i nz-icon class="ant-input-clear-icon clear" nzTheme="fill"
-                nzType="close-circle" *ngIf="save_model.warehouse_name" (click)="save_model.warehouse_name = null"></i>
+                nzType="close-circle" *ngIf="save_model.numbers_ofproducts" (click)="save_model.numbers_ofproducts = null"></i>
         </ng-template>
     </div>
 </div>

@@ -12,6 +12,7 @@ export class ChangeComponent implements OnInit {
   @Input() state: string
   textValue: string | null = null;
   save_model: any | null = null
+  status: number = 1
 
   constructor(
     private nzModalRef: NzModalRef,
@@ -22,6 +23,8 @@ export class ChangeComponent implements OnInit {
     this.save_model = {
       ...this.model
     }
+    console.log(this.model);
+    
   }
 
   create() {

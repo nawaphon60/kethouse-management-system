@@ -5,13 +5,15 @@
     <ng-template #prefixTemplateSearch><i nz-icon nzType="search" nzTheme="outline"></i></ng-template>
     <nz-select class="me-3" ngModel="คลังสินค้าต้นทาง">
         <nz-option nzValue="คลังสินค้าต้นทาง" nzLabel="คลังสินค้าต้นทาง" nzDisabled></nz-option>
-        <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+        <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
+        <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
+        <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
     </nz-select>
     <nz-select class="me-3" ngModel="คลังสินค้าปลายทาง">
         <nz-option nzValue="คลังสินค้าปลายทาง" nzLabel="คลังสินค้าปลายทาง" nzDisabled></nz-option>
-        <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+        <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
+        <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
+        <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
     </nz-select>
     <nz-date-picker [(ngModel)]="date" [nzPlaceHolder]="'เลือกวันที่'" (ngModelChange)="onChange($event)"></nz-date-picker>
 </div>
@@ -28,6 +30,7 @@
             <th>มูลค้าสินค้าทั้งหมด</th>
             <th>เวลาที่สร้างรายการ</th>
             <th>ผู้ทำรายการ</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -47,6 +50,19 @@
             </td>
             <td>{{ data.create_at }}</td>
             <td>{{ data.create_by }}</td>
+            <td class="py-1">
+                <button class="btn-edit-delete me-3" >
+                    <i class="far fa-edit table-icon" style="color: #868686;"></i>
+                </button>
+                <button class="btn-edit-delete me-3">
+                    <i class="fas fa-trash-alt table-icon" style="color: #868686;"></i>
+                </button>
+                <a routerLink="">
+                    <button class="btn btn-light btn-sm btn-detail mb-2">
+                        ดูรายละเอียด
+                    </button>
+                </a>
+            </td>
         </tr>
     </tbody>
 </nz-table>

@@ -2,8 +2,12 @@
     <div class="row">
         <h1 class="col-6">คลังสินค้า</h1>
         <div class="col-6 d-flex justify-content-end"><button nz-button class="btn-orange"
-                (click)="createWarehouse('normal')">เพิ่มคลังสินค้า</button>
+                (click)="createWarehouse('normal',tplTitle)">เพิ่มคลังสินค้า</button>
         </div>
+        <ng-template #tplTitle let-ref="modalRef">
+            <div class="submenu-icon d-inline-block me-2"><i class="fas fa-box icon"></i></div>
+            <h2 class="d-inline-block m-0">เพิ่มคลังสินค้า</h2>
+        </ng-template>
     </div>
 
     <nz-input-group class="mb-3" [nzPrefix]="prefixTemplateSearch" style="width: 400px;">
@@ -26,17 +30,27 @@
         <tbody>
             <tr *ngFor="let obj of warehouselist">
                 <td class="text-end">{{obj.id}}</td>
-                <td class="text-center"><nz-tag [nzColor]="'cyan'">{{obj.warehouse_id}}</nz-tag></td>
+                <td class="text-center">
+                    <nz-tag [nzColor]="'cyan'">{{obj.warehouse_id}}</nz-tag>
+                </td>
                 <td><a class="td-link" routerLink="/system/warehouse-detail/{{obj.id}}">{{obj.warehouse_name}}</a></td>
-                <td class="text-end"><nz-tag class="tag-orange" [nzColor]="'orange'">{{obj.numbers_ofproducts | currency: ' '}}</nz-tag></td>
+                <td class="text-end">
+                    <nz-tag class="tag-orange" [nzColor]="'orange'">{{obj.numbers_ofproducts | currency: ' '}}</nz-tag>
+                </td>
                 <td class="text-center">{{obj.updated_at | date: 'medium'}}</td>
                 <td class="py-1">
                     <button class="btn-edit-delete me-3" (click)="editWarehouse(obj)">
                         <i class="far fa-edit table-icon" style="color: #868686;"></i>
                     </button>
+                    <!-- <ng-template #tplTitle let-ref="modalRef">
+                        <div class="submenu-icon d-inline-block me-2"><i class="fas fa-box icon"></i></div>
+                        <h2 class="d-inline-block">เพิ่มคลังสินค้า</h2>
+                    </ng-template> -->
+
                     <button class="btn-edit-delete me-3" (click)="deleteWarehouse(obj.warehouse_id)">
                         <i class="fas fa-trash-alt table-icon" style="color: #868686;"></i>
                     </button>
+
                     <a routerLink="/system/warehouse-detail/{{obj.id}}">
                         <button class="btn btn-light btn-sm btn-detail mb-2">
                             ดูรายละเอียด

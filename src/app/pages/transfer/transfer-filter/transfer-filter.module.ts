@@ -10,6 +10,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   declarations: [TransferFilterComponent],
@@ -22,7 +23,8 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
     NzInputModule,
     NzIconModule,
     NzSelectModule,
-    NzDatePickerModule
+    NzDatePickerModule,
+    NzButtonModule
   ],
   exports: [
     TransferFilterComponent
