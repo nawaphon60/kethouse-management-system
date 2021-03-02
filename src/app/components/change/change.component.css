@@ -1,0 +1,8 @@
+::ng-deep svg {
+    margin-top: -3px !important;
+    /* color: #E85440; */
+}
+
+nz-select {
+    width: 200px;
+}

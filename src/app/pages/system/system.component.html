@@ -47,7 +47,7 @@
         <span title><i class="fas fa-box me-3"></i><span>Products</span></span>
         <ul>
           <a routerLink="/system/products">
-            <li nz-menu-item routerLinkActive="ant-menu-item-selected">Products</li>
+            <li nz-menu-item routerLinkActive="ant-menu-item-selected" [ngClass]="{'ant-menu-item-selected': href === '/system/create-product'}">Products</li>
           </a>
           <a routerLink="/system/transfer">
             <li nz-menu-item routerLinkActive="ant-menu-item-selected">Transfer</li>

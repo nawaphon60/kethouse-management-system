@@ -28,13 +28,17 @@ export class SystemComponent implements OnInit {
       this.openMap.sub1 = true
     }
     
-    if (this.href == '/system/warehouse-detail/1') {
+    if (this.href == `/system/warehouse-detail/1`) {
       this.openMap.sub1 = true
       console.log(this.openMap.sub1);
       
     }
 
     if (this.href == '/system/products') {
+      this.openMap.sub3 = true
+    }
+    
+    if (this.href == '/system/create-product') {
       this.openMap.sub3 = true
     }
     

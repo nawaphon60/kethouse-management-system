@@ -41,3 +41,14 @@
     border-radius: 3px;
     margin-right: 0;
 }
+
+.ant-tag-blue {
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 3px;
+    margin-right: 0;
+}
+
+.ant-tag-blue:hover {
+    transform: scale(1.1);
+}

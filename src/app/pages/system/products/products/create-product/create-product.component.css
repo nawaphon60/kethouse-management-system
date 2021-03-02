@@ -1,0 +1,34 @@
+.inner-content {
+    padding: 24px;
+    background: #fff;
+    min-height: 200px;
+}
+
+.submenu-icon {
+    color: white;
+    background: #E85440;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 6px;
+}
+
+.icon {
+    font-size: 16px;
+    margin: 0 !important;
+}
+
+nz-select {
+    width: 100%;
+}
+
+/* :host ::ng-deep .avatar-uploader>.ant-upload {
+    width: 128px;
+    height: 128px;
+} */
+
+.ant-upload-picture-card-wrapper {
+    display: inline-block;
+    width: 120px;
+}

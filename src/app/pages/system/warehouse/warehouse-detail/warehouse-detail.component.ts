@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { SET_PROFILE } from 'src/app/actions';
 import { WarehouseService } from 'src/app/services/warehouse.service'
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { ChangeComponent } from 'src/app/components/change/change.component'
 
 @Component({
   selector: 'app-warehouse-detail',
@@ -20,7 +22,8 @@ export class WarehouseDetailComponent implements OnInit, OnDestroy {
   constructor(
     private activateroute: ActivatedRoute,
     private store: Store<any>,
-    private warehouseService: WarehouseService
+    private warehouseService: WarehouseService,
+    private ModalService: NzModalService
   ) { }
 
   ngOnDestroy() {
@@ -52,4 +55,24 @@ export class WarehouseDetailComponent implements OnInit, OnDestroy {
     }
   }
 
+  Change(obj: any): void {
+    console.log(obj);
+
+    const modalRef = this.ModalService.create({
+      nzTitle: 'ปรับจำนวนคงเหลือในคลังสินค้า',
+      nzWidth: '40%',
+      nzContent: ChangeComponent,
+      nzComponentParams: {
+        model: obj,
+        state: "edit"
+      },
+      nzClosable: false,
+      nzFooter: null
+    }).afterClose.subscribe((r: boolean) => {
+      modalRef.unsubscribe()
+      if (r) {
+        // this.getByID()
+      }
+    })
+  }
 }
