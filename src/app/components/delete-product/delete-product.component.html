@@ -4,19 +4,19 @@
 </div>
 <p>ไม่สามารถลบสินค้าได้เนื่องจากมีสินค้านี้เหลืออยู่ภายในคลัง หากต้องการลบสินค้า จะต้องไม่มีสินค้านี้เหลืออยู่ในคลัง</p>
 
-<nz-table #basicTable [nzData]="listdata">
+<nz-table #basicTable [nzData]="listOfData">
     <thead>
       <tr>
-        <th>ลำดับ</th>
-        <th>ชื่อสินค้า</th>
-        <th>จำนวนสินค้าทั้งหมด</th>
+        <th class="col-2 text-center">ลำดับ</th>
+        <th class="col-7">ชื่อสินค้า</th>
+        <th class="col-3 text-center">จำนวนสินค้าทั้งหมด</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Product01</td>
-        <td>10</td>
+      <tr *ngFor="let obj of listOfData">
+        <td class="col-2 text-center">{{obj.key}}</td>
+        <td class="col-7">{{obj.product}}</td>
+        <td class="col-3 text-center">{{obj.num_ofproduct}}</td>
       </tr>
     </tbody>
   </nz-table>

@@ -1,1 +1,22 @@
-<p>transfer works!</p>
+<div class="inner-content mt-3">
+    <div class="row">
+        <h1 class="col-6">คลังสินค้า</h1>
+        <div class="col-6 d-flex justify-content-end">
+          <button nz-button class="btn-orange">
+            <a routerLink="/system/create-product"><i class="fas fa-plus-circle me-1"></i>สร้างรายการโอนย้าย</a>
+        </button>
+        </div>
+    </div>
+
+    <nz-tabset>
+        <nz-tab nzTitle="รอโอนย้าย">
+          <app-transfer-filter></app-transfer-filter>
+        </nz-tab>
+        <nz-tab nzTitle="กำลังโอนย้าย">
+          <app-transfer-filter></app-transfer-filter>
+        </nz-tab>
+        <nz-tab nzTitle="โอนย้ายสำเร็จ">
+          <app-transfer-filter></app-transfer-filter>
+        </nz-tab>
+      </nz-tabset>
+</div>
