@@ -13,6 +13,7 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
     NzTagModule,
     NzInputModule,
     NzInputNumberModule,
+    NzModalModule
   ]
 })
 export class TransferCreateModule { }

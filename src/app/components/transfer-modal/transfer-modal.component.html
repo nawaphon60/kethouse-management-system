@@ -1,0 +1,32 @@
+<nz-input-group class="mb-3" [nzPrefix]="prefixTemplateSearch" style="width: 400px;">
+    <input nz-input class="ml-3" placeholder="ค้นหา" nzSize="default" name="search">
+</nz-input-group>
+<nz-table #basicTable [nzData]="listOfData">
+    <thead>
+        <tr>
+            <th class="text-center"><label nz-checkbox [(ngModel)]="checked">All</label></th>
+            <th></th>
+            <th>รหัสสินค้า</th>
+            <th>ชื่อสินค้า</th>
+            <th class="text-end">พร้อมจำหน่าย</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of listOfData">
+            <td class="text-center">
+                <label nz-checkbox [(ngModel)]="checked"></label>
+            </td>
+            <td>
+                <img src="../../../../assets/images/packing01.png" alt="" style="width: 37px;">
+            </td>
+            <td class="text-start"><nz-tag [nzColor]="'cyan'">{{product.key}}</nz-tag></td>
+            <td class="text-start">{{product.product}}</td>
+            <td class="text-end"><nz-tag [nzColor]="'orange'">{{product.num_ofproduct}}</nz-tag></td>
+        </tr>
+    </tbody>
+</nz-table>
+<ng-template #prefixTemplateSearch><i nz-icon nzType="search" nzTheme="outline"></i></ng-template>
+<footer class="d-flex justify-content-end">
+    <button nz-button class="btn-outline-orange mt-1 me-3" (click)="closeModal()">ปิด</button>
+    <button nz-button class="btn-orange mt-1">ยืนยัน</button>
+</footer>

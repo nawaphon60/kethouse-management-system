@@ -1,26 +1,26 @@
 <div>
-    <div class="submenu-icon d-inline-block me-1"><i nz-icon  nzType="close" nzTheme="outline"></i></div>
-    <h2 class="d-inline-block">ไม่สามารถลบสินค้าได้</h2>
+  <div class="submenu-icon d-inline-block me-1"><i nz-icon nzType="close" nzTheme="outline"></i></div>
+  <h2 class="d-inline-block">ไม่สามารถลบสินค้าได้</h2>
 </div>
 <p>ไม่สามารถลบสินค้าได้เนื่องจากมีสินค้านี้เหลืออยู่ภายในคลัง หากต้องการลบสินค้า จะต้องไม่มีสินค้านี้เหลืออยู่ในคลัง</p>
 
 <nz-table #basicTable [nzData]="listOfData">
-    <thead>
-      <tr>
-        <th class="col-2 text-center">ลำดับ</th>
-        <th class="col-7">ชื่อสินค้า</th>
-        <th class="col-3 text-center">จำนวนสินค้าทั้งหมด</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let obj of listOfData">
-        <td class="col-2 text-center">{{obj.key}}</td>
-        <td class="col-7">{{obj.product}}</td>
-        <td class="col-3 text-center">{{obj.num_ofproduct}}</td>
-      </tr>
-    </tbody>
-  </nz-table>
+  <thead>
+    <tr>
+      <th class="col-2 text-center">ลำดับ</th>
+      <th class="col-7">ชื่อสินค้า</th>
+      <th class="col-3 text-center">จำนวนสินค้าทั้งหมด</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of listOfData">
+      <td class="col-2 text-center">{{obj.key}}</td>
+      <td class="col-7">{{obj.product}}</td>
+      <td class="col-3 text-center">{{obj.num_ofproduct}}</td>
+    </tr>
+  </tbody>
+</nz-table>
 
-  <footer class="d-flex justify-content-end">
-     <button nz-button class="btn-outline-orange mt-1" (click)="closeModal()">ปิด</button>
+<footer class="d-flex justify-content-end">
+  <button nz-button class="btn-outline-orange mt-1" (click)="closeModal()">ปิด</button>
 </footer>

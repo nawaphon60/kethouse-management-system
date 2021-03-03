@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { TransferModalComponent } from 'src/app/components/transfer-modal/transfer-modal.component';
 
 interface Product {
   key: string;
@@ -35,12 +37,29 @@ export class TransferCreateComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(
+    private ModalService: NzModalService
+  ) { }
 
   ngOnInit(): void {
   }
 
   onChange(result: Date): void {
     console.log('onChange: ', result);
+  }
+
+  ChooseProducts(tplTitle: TemplateRef<{}>): void {
+    const modalRef = this.ModalService.create({
+      nzTitle: tplTitle,
+      nzWidth: '50%',
+      nzContent: TransferModalComponent,
+      nzClosable: false,
+      nzFooter: null
+    }).afterClose.subscribe((r: boolean) => {
+      modalRef.unsubscribe()
+      if (r) {
+        // this.getByID()
+      }
+    })
   }
 }
