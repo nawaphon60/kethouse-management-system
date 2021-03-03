@@ -1,7 +1,8 @@
 <div class="inner-content mt-3">
     <div class="row">
         <h1 class="col-6">คลังสินค้า {{warehouse.warehouse_name}}</h1>
-        <div class="col-6 d-flex justify-content-end"><button nz-button class="btn-orange"><i class="fas fa-plus-circle me-1"></i>เพิ่มสินค้า</button>
+        <div class="col-6 d-flex justify-content-end">
+            <a routerLink="/system/create-product"><button nz-button class="btn-orange"><i class="fas fa-plus-circle me-1"></i>เพิ่มสินค้า</button></a>
         </div>
     </div>
     
@@ -15,6 +16,7 @@
             <tr>
                 <!-- <th>ลำดับ</th> -->
                 <th class="col- text-center"><label nz-checkbox [(ngModel)]="checked">All</label></th>
+                <th class="col- text-center"></th>
                 <th class="col- text-center">รหัสสินค้า</th>
                 <th class="col-">ชื่อสินค้า</th>
                 <th class="col- text-center">คุณสมบัติ</th>
@@ -31,6 +33,9 @@
             <tr >
                 <!-- <td></td> -->
                 <td class="text-center"><label nz-checkbox [(ngModel)]="checked"></label></td>
+                <td class="text-center">
+                    <img src="../../../../assets/images/packing01.png" alt="" style="width: 37px;">
+                </td>
                 <td class="text-center"><nz-tag [nzColor]="'cyan'">PD01-BLK-S</nz-tag></td>
                 <td class="">Product01</td>
                 <td class="text-center">สีดำ</td>
@@ -51,7 +56,11 @@
                         <i class="fas fa-trash-alt table-icon" style="color: #868686;"></i>
                     </button>
 
-                    <nz-tag type="button" [nzColor]="'blue'" (click)="Change(warehouse)">ปรับ</nz-tag>
+                    <nz-tag type="button" [nzColor]="'blue'" (click)="Change(warehouse, tplTitleChange)">ปรับ</nz-tag>
+                    <ng-template #tplTitleChange let-ref="modalRef">
+                        <div class="submenu-icon d-inline-block me-2"><i class="fas fa-warehouse icon"></i></div>
+                        <div class="d-inline-block"><h2 class="m-0">ปรับจำนวนคงเหลือในคลังสินค้า</h2></div>
+                    </ng-template>
                 </td>
             </tr>
         </tbody>

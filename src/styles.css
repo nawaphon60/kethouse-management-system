@@ -78,13 +78,27 @@ p {
     font-weight: 400;
 }
 
-.btn-orange:hover {
+/* .btn-blue:focus {
+    color: #fff;
+    background: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-blue {
+    color: #fff;
+    background: #0d6efd;
+    border-color: #0d6efd;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+.btn-blue:hover {
     color: #e03526;
     background: #fff;
     border-color: #e03526 !important;
-    /* opacity: 0.8; */
+    opacity: 0.8 !important;
     font-weight: 400;
-}
+} */
 
 .btn-outline-orange {
     border-radius: 5px;
@@ -168,5 +182,5 @@ p {
 }
 
 .anticon {
-    margin-top: 2px;
+    /* margin-top: 2px; */
 }

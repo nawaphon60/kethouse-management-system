@@ -77,11 +77,11 @@ export class WarehouseComponent implements OnInit {
     })
   }
 
-  editWarehouse(obj: any): void {
+  editWarehouse(obj: any,tplTitleEdit: TemplateRef<{}>): void {
     console.log(obj);
     
     const modalRef = this.ModalService.create({
-      nzTitle: 'แก้ไขคลังสินค้า',
+      nzTitle: tplTitleEdit,
       nzWidth: '40%',
       nzContent: EditWarehouseComponent,
       nzComponentParams: {

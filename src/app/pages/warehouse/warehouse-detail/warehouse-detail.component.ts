@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, TemplateRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { SET_PROFILE } from 'src/app/actions';
@@ -59,11 +59,11 @@ export class WarehouseDetailComponent implements OnInit, OnDestroy {
     }
   }
 
-  Change(obj: any): void {
+  Change(obj: any, tplTitleChange: TemplateRef<{}>): void {
     console.log(obj);
 
     const modalRef = this.ModalService.create({
-      nzTitle: 'ปรับจำนวนคงเหลือในคลังสินค้า',
+      nzTitle: tplTitleChange,
       nzWidth: '40%',
       nzContent: ChangeComponent,
       nzComponentParams: {

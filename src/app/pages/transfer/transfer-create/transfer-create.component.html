@@ -1,0 +1,132 @@
+<div class="inner-content mt-3">
+    <div>
+        <h1 class="col-6">โอนย้ายสินค้า</h1>
+    </div>
+    <div class="mt-5">
+        <div class="submenu-icon d-inline-block me-2"><i class="fas fa-file-alt icon"></i></div>
+        <h2 class="d-inline-block">ข้อมูลการย้ายคลัง</h2>
+    </div>
+
+    <div class="col-12">
+        <div class="row col-12 mt-3">
+            <div class="col-2">
+                <p>รายการ</p>
+            </div>
+            <div class="col-2">
+                <input nz-input nzSize="default" />
+            </div>
+        </div>
+        <div class="row col-12 mt-1">
+            <div class="col-2">
+                <p>สถานะการโอนย้าย</p>
+            </div>
+            <div class="col-2">
+                <nz-select ngModel="ขาย">
+                    <nz-option nzValue="ขาย" nzLabel="ขาย" nzDisabled></nz-option>
+                    <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                    <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                </nz-select>
+            </div>
+        </div>
+        <div class="row col-12 mt-1">
+            <div class="col-2">
+                <p>จาก</p>
+            </div>
+            <div class="col-2">
+                <nz-select ngModel="คลังสินค้า A">
+                    <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
+                    <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
+                    <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
+                </nz-select>
+            </div>
+            <div class="col-1 text-center">
+                <p>ไป</p>
+            </div>
+            <div class="col-2">
+                <nz-select ngModel="คลังสินค้า A">
+                    <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
+                    <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
+                    <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
+                </nz-select>
+            </div>
+        </div>
+        <div class="row col-12">
+            <div class="col-2 mt-1">
+                <p>วันที่</p>
+            </div>
+            <div class="col-2 mt-1">
+                <nz-date-picker [(ngModel)]="date" [nzPlaceHolder]="'เลือกวันที่'" (ngModelChange)="onChange($event)">
+                </nz-date-picker>
+            </div>
+        </div>
+    </div>
+
+    <div class="row col-12 mt-5">
+        <div class="col-6">
+            <div class="submenu-icon d-inline-block me-2"><i class="fas fa-box icon"></i></div>
+            <h2 class="d-inline-block">สินค้า</h2>
+        </div>
+        <div class="col-6 text-end">
+            <button nz-button class="btn-orange">
+                <a routerLink=""><i class="fas fa-plus-circle me-1"></i>เลือกสินค้าหลายรายการ</a>
+            </button>
+        </div>
+    </div>
+    <nz-table class="mt-3" #basicTable [nzData]="listOfData">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>รหัสสินค้า</th>
+                <th>ชื่อสินค้า</th>
+                <th>จำนวนที่โอนได้</th>
+                <th>จำนวนที่โอน</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of listOfData">
+                <td class="text-center">
+                    <nz-tag [nzColor]="'blue'">เลือก</nz-tag>
+                </td>
+                <td>
+                    <img src="../../../../assets/images/packing01.png" alt="" style="width: 37px;">
+                </td>
+                <td><input nz-input placeholder="ป้อนรหัสสินค้า" nzSize="default" style="width: 150px;" [(ngModel)]="product.key" /></td>
+                <td><input nz-input placeholder="ป้อนชื่อสินค้า" nzSize="default" style="width: 150px;"  [(ngModel)]="product.product"/></td>
+                <td>
+                    <nz-input-number [nzMin]="1" [nzMax]="" [nzStep]="1" [(ngModel)]="product.num_ofproduct"></nz-input-number>
+                </td>
+                <td>
+                    <nz-input-number [nzMin]="1" [nzMax]="" [nzStep]="1" [(ngModel)]="product.num_oftransfer"></nz-input-number>
+                </td>
+                <td class="py-0">
+                    <button class="btn-edit-delete me-3">
+                        <i class="fas fa-trash-alt table-icon" style="color: #868686;"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">
+                    <button nz-button class="outline-orange">
+                        <a routerLink=""><i class="fas fa-plus-circle me-1"></i>เพิ่มสินค้า</a>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
+
+    <div class="row col-12 my-3">
+        <div class="col-2">
+            <p>หมายเหตุ</p>
+        </div>
+        <div class="col-6">
+            <textarea nz-input style="height: 100px;"></textarea>
+        </div>
+    </div>
+
+    <footer class="d-flex justify-content-end mt-3">
+        <a routerLink="/system/products"><button nz-button class="btn-outline-orange me-3">ยกเลิก</button></a>
+        <button nz-button class="btn-orange">บันทึก</button>
+    </footer>
+</div>

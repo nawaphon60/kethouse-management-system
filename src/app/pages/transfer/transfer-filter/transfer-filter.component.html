@@ -21,13 +21,13 @@
 <nz-table #basicTable [nzData]="listOfData">
     <thead>
         <tr>
-            <th>ลำดับ</th>
-            <th>รายการ</th>
-            <th>คลังสินค้าต้นทาง</th>
-            <th>คลังสินค้าปลายทาง</th>
-            <th>สินค้าที่โอนย้าย</th>
-            <th>จำนวนสินค้า</th>
-            <th>มูลค้าสินค้าทั้งหมด</th>
+            <th class="text-center">ลำดับ</th>
+            <th class="text-center">รายการ</th>
+            <th class="text-start">คลังสินค้าต้นทาง</th>
+            <th class="text-start">คลังสินค้าปลายทาง</th>
+            <th class="text-start">สินค้าที่โอนย้าย</th>
+            <th class="text-end">จำนวนสินค้า</th>
+            <th class="text-end">มูลค้าสินค้าทั้งหมด</th>
             <th>เวลาที่สร้างรายการ</th>
             <th>ผู้ทำรายการ</th>
             <th></th>
@@ -35,21 +35,21 @@
     </thead>
     <tbody>
         <tr *ngFor="let data of basicTable.data">
-            <td>{{ data.key }}</td>
-            <td>
+            <td class="text-center">{{ data.key }}</td>
+            <td class="text-center">
                 <nz-tag [nzColor]="'cyan'">{{ data.transfer_id }}</nz-tag>
             </td>
-            <td>{{ data.ow }}</td>
-            <td>{{ data.dw }}</td>
-            <td>{{ data.product }}</td>
-            <td>
-                <nz-tag [nzColor]="'orange'">{{ data.num_ofproduct }}</nz-tag>
+            <td class="text-start">{{ data.ow }}</td>
+            <td class="text-start">{{ data.dw }}</td>
+            <td class="text-start">{{ data.product }}</td>
+            <td class="text-end">
+                <nz-tag [nzColor]="'orange'">{{ data.num_ofproduct | number: '1.0-0'}}</nz-tag>
             </td>
-            <td>
-                <nz-tag [nzColor]="'green'">{{ data.product_value }}</nz-tag>
+            <td class="text-end">
+                <nz-tag [nzColor]="'green'">{{ data.product_value | number: '1.0-0' }}</nz-tag>
             </td>
             <td>{{ data.create_at }}</td>
-            <td>{{ data.create_by }}</td>
+            <td class="text-start">{{ data.create_by }}</td>
             <td class="py-1">
                 <button class="btn-edit-delete me-3" >
                     <i class="far fa-edit table-icon" style="color: #868686;"></i>
