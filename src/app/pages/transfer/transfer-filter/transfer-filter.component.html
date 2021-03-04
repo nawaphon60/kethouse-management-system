@@ -3,7 +3,7 @@
         <input nz-input class="ml-3" placeholder="ค้นหา" nzSize="default" name="search">
     </nz-input-group>
     <ng-template #prefixTemplateSearch><i nz-icon nzType="search" nzTheme="outline"></i></ng-template>
-    <nz-select class="me-3" ngModel="คลังสินค้าต้นทาง">
+    <!-- <nz-select class="me-3" ngModel="คลังสินค้าต้นทาง">
         <nz-option nzValue="คลังสินค้าต้นทาง" nzLabel="คลังสินค้าต้นทาง" nzDisabled></nz-option>
         <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
         <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
@@ -14,7 +14,7 @@
         <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
         <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
         <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
-    </nz-select>
+    </nz-select> -->
     <nz-date-picker [(ngModel)]="date" [nzPlaceHolder]="'เลือกวันที่'" (ngModelChange)="onChange($event)"></nz-date-picker>
 </div>
 
@@ -22,10 +22,18 @@
     <thead>
         <tr>
             <th class="text-center">ลำดับ</th>
-            <th class="text-center">รายการ</th>
-            <th class="text-start">คลังสินค้าต้นทาง</th>
-            <th class="text-start">คลังสินค้าปลายทาง</th>
-            <th class="text-start">สินค้าที่โอนย้าย</th>
+            <th class="text-center">
+                <input nz-input placeholder="รายการ" nzSize="small" style="width: 150px;"/>
+            </th>
+            <th class="text-start">
+                <input nz-input placeholder="คลังสินค้าต้นทาง" nzSize="small" style="width: 150px;"/>
+            </th>
+            <th class="text-start">
+                <input nz-input placeholder="คลังสินค้าปลายทาง" nzSize="small" style="width: 150px;"/>
+            </th>
+            <th class="text-start">
+                <input nz-input placeholder="สินค้าที่โอนย้าย" nzSize="small" style="width: 150px;"/>
+            </th>
             <th class="text-end">จำนวนสินค้า</th>
             <th class="text-end">มูลค้าสินค้าทั้งหมด</th>
             <th>เวลาที่สร้างรายการ</th>
@@ -57,7 +65,7 @@
                 <button class="btn-edit-delete me-3">
                     <i class="fas fa-trash-alt table-icon" style="color: #868686;"></i>
                 </button>
-                <a routerLink="">
+                <a routerLink="/system/transfer-detail">
                     <button class="btn btn-light btn-sm btn-detail mb-2">
                         ดูรายละเอียด
                     </button>

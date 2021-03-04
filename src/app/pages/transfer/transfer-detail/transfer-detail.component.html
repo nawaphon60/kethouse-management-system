@@ -1,0 +1,118 @@
+<div class="inner-content mt-3">
+    <div class="row">
+        <div class="col-8">
+            <div class="col-6" style="height: 50px;">
+                <h1 class="d-inline-block me-3">โอนย้ายสินค้า</h1>
+                <button class="btn-default d-inline-block" nz-button><i nz-icon class="print-icon" nzType="printer" nzTheme="outline"></i>พิมพ์</button>
+            </div>
+            
+            <div class="mt-5">
+                <div class="submenu-icon d-inline-block me-2"><i class="fas fa-file-alt icon"></i></div>
+                <h2 class="d-inline-block">ข้อมูลการย้ายคลัง</h2>
+            </div>
+            <div class="row col-12 mt-3">
+                <div class="col-2">
+                    <p>รายการ</p>
+                </div>
+                <div class="col-2">
+                    <p>TF-2530203001</p>
+                </div>
+            </div>
+            <div class="row col-12 mt-1">
+                <div class="col-2">
+                    <p>สถานะการโอนย้าย</p>
+                </div>
+                <div class="col-2">
+                    <p>ขาย</p>
+                </div>
+            </div>
+            <div class="row col-12 mt-1">
+                <div class="col-2">
+                    <p>จาก</p>
+                </div>
+                <div class="col-2">
+                    <p>คลังสินค้า A</p>
+                </div>
+                <div class="col-1 text-center">
+                    <p>ไป</p>
+                </div>
+                <div class="col-2">
+                    <p>คลังสินค้า B</p>
+                </div>
+            </div>
+            <div class="row col-12">
+                <div class="col-2 mt-1">
+                    <p>วันที่</p>
+                </div>
+                <div class="col-6 mt-1">
+                    <p>Feb 23, 2021, 9:09:31 AM</p>
+                </div>
+            </div>
+            <div class="row col-12">
+                <div class="col-2 mt-1">
+                    <p>ผู้ทำรายการ</p>
+                </div>
+                <div class="col-6 mt-1">
+                    <p>John Brown</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4 text-end pe-3">
+            <img src="../../../../assets/images/Group 201.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="row col-12 mt-5">
+        <div class="col-6">
+            <div class="submenu-icon d-inline-block me-2"><i class="fas fa-box icon"></i></div>
+            <h2 class="d-inline-block">สินค้า</h2>
+        </div>
+        <!-- <div class="col-6 text-end">
+            <button nz-button nzType="primary" (click)="ChooseProducts(tplTitle)">
+                <i class="fas fa-plus-circle me-1"></i>เลือกสินค้าหลายรายการ
+            </button>
+            <ng-template #tplTitle let-ref="modalRef">
+                <div class="submenu-icon d-inline-block me-2"><i class="fas fa-box icon"></i></div>
+                <div class="d-inline-block">
+                    <h2 class="m-0">เลือกสินค้า</h2>
+                </div>
+            </ng-template>
+        </div> -->
+    </div>
+    <nz-table class="mt-3" #basicTable [nzData]="listOfData" [nzShowPagination]="false">
+        <thead>
+            <tr>
+                <th>ลำดับ </th>
+                <th></th>
+                <th>รหัสสินค้า</th>
+                <th>ชื่อสินค้า</th>
+                <th>คุณสมบัติ</th>
+                <th class="text-end">จำนวนที่โอนได้</th>
+                <th class="text-end">จำนวนที่โอน</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of listOfData">
+                <td class="text-center"></td>
+                <td>
+                    <img src="../../../../assets/images/packing01.png" alt="" style="width: 37px;">
+                </td>
+                <td>{{product.key}}</td>
+                <td>{{product.product}}</td>
+                <td>{{product.properties}}</td>
+                <td class="text-end">{{product.num_ofproduct}}</td>
+                <td class="text-end">{{product.num_oftransfer}}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+
+    <div class="row col-12 my-3">
+        <div class="col-2">
+            <p>หมายเหตุ</p>
+        </div>
+        <div class="col-6">
+            <textarea nz-input style="height: 100px;"></textarea>
+        </div>
+    </div>
+</div>

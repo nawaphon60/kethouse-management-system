@@ -1,0 +1,43 @@
+.inner-content {
+    padding: 24px;
+    background: #fff;
+    min-height: 360px;
+}
+
+.submenu-icon {
+    color: white;
+    background: #E85440;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 6px;
+    font-size: 16px;
+}
+
+nz-select {
+    width: 100%;
+}
+
+nz-date-picker {
+    width: 100%;
+}
+
+.ant-tag-blue {
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 3px;
+    margin-right: 0;
+}
+
+.ant-tag-blue:hover {
+    transform: scale(1.1);
+}
+
+.table-icon {
+    font-size: 26px;
+}
+
+::ng-deep .anticon svg {
+    margin-bottom: 5px !important;
+}

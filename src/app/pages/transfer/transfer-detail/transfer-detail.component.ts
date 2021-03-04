@@ -1,0 +1,69 @@
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { TransferModalComponent } from 'src/app/components/transfer-modal/transfer-modal.component';
+
+interface Product {
+  key: string;
+  product: any;
+  properties: any;
+  num_ofproduct: number;
+  num_oftransfer: number
+}
+
+@Component({
+  selector: 'app-transfer-detail',
+  templateUrl: './transfer-detail.component.html',
+  styleUrls: ['./transfer-detail.component.css']
+})
+export class TransferDetailComponent implements OnInit {
+  date = null
+  listOfData: Product[] = [
+    {
+      key: 'PD01-BLK-S',
+      product: 'Product01',
+      properties: 'สีขาว',
+      num_ofproduct: 20,
+      num_oftransfer: 10
+    },
+    {
+      key: 'PD02-BLK-M',
+      product: 'Product02',
+      properties: 'สีดำ',
+      num_ofproduct: 100,
+      num_oftransfer: 10
+    },
+    {
+      key: 'PD03-BLK-L',
+      product: 'Product03',
+      properties: 'สีเทา',
+      num_ofproduct: 250,
+      num_oftransfer: 10
+    }
+  ]
+
+  constructor(
+    private ModalService: NzModalService
+  ) { }
+
+  ngOnInit(): void {
+  }
+
+  onChange(result: Date): void {
+    console.log('onChange: ', result);
+  }
+
+  ChooseProducts(tplTitle: TemplateRef<{}>): void {
+    const modalRef = this.ModalService.create({
+      nzTitle: tplTitle,
+      nzWidth: '40%',
+      nzContent: TransferModalComponent,
+      nzClosable: false,
+      nzFooter: null
+    }).afterClose.subscribe((r: boolean) => {
+      modalRef.unsubscribe()
+      if (r) {
+        // this.getByID()
+      }
+    })
+  }
+}
