@@ -81,8 +81,8 @@ export class WarehouseDetailComponent implements OnInit, OnDestroy {
   }
 
   deleteProduct(str: string) {
-    const modalRef = this.ModalService.create({
-      // nzTitle: 'ปรับจำนวนคงเหลือในคลังสินค้า',
+    const modalRef = this.ModalService.error({
+      nzTitle: 'ไม่สามารถลบสินค้าได้',
       nzWidth: '40%',
       nzContent: DeleteProductComponent,
       nzComponentParams: {
@@ -90,7 +90,7 @@ export class WarehouseDetailComponent implements OnInit, OnDestroy {
         // state: "edit"
       },
       nzClosable: false,
-      nzFooter: null
+      nzOkText: null,
     }).afterClose.subscribe((r: boolean) => {
       modalRef.unsubscribe()
       if (r) {

@@ -8,6 +8,7 @@
             <th></th>
             <th>รหัสสินค้า</th>
             <th>ชื่อสินค้า</th>
+            <th class="text-center">คุณสมบัติ</th>
             <th class="text-end">พร้อมจำหน่าย</th>
         </tr>
     </thead>
@@ -21,6 +22,7 @@
             </td>
             <td class="text-start"><nz-tag [nzColor]="'cyan'">{{product.key}}</nz-tag></td>
             <td class="text-start">{{product.product}}</td>
+            <td class="text-center">{{product.properties}}</td>
             <td class="text-end"><nz-tag [nzColor]="'orange'">{{product.num_ofproduct}}</nz-tag></td>
         </tr>
     </tbody>

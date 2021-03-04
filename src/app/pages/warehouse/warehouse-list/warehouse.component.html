@@ -1,8 +1,10 @@
 <div class="inner-content mt-3 mb-3">
     <div class="row">
         <h1 class="col-6">คลังสินค้า</h1>
-        <div class="col-6 d-flex justify-content-end"><button nz-button class="btn-orange"
-                (click)="createWarehouse('normal',tplTitle)">เพิ่มคลังสินค้า</button>
+        <div class="col-6 d-flex justify-content-end">
+            <button nz-button class="btn-orange"(click)="createWarehouse('normal',tplTitle)">
+                <i class="fas fa-plus-circle me-1"></i>เพิ่มคลังสินค้า
+            </button>
         </div>
         <ng-template #tplTitle let-ref="modalRef">
             <div class="submenu-icon d-inline-block me-2"><i class="fas fa-warehouse icon"></i></div>
@@ -47,9 +49,13 @@
                         <h2 class="d-inline-block m-0">แก้ไขคลังสินค้า</h2>
                     </ng-template>
 
-                    <button class="btn-edit-delete me-3" (click)="deleteWarehouse(obj.warehouse_id)">
+                    <button class="btn-edit-delete me-3" (click)="deleteWarehouse(obj.id)">
                         <i class="fas fa-trash-alt table-icon" style="color: #868686;"></i>
                     </button>
+                    <ng-template #TplFooter class="d-flex justify-content-end">
+                        <button nz-button class="btn-outline-orange me-3">ปิด</button>
+                        <button nz-button class="btn-orange">ยืนยัน</button>
+                    </ng-template>
 
                     <a routerLink="/system/warehouse-detail/{{obj.id}}">
                         <button class="btn btn-light btn-sm btn-detail mb-2">

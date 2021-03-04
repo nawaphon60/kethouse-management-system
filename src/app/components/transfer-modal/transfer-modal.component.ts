@@ -4,6 +4,7 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 interface Product {
   key: string;
   product: any;
+  properties: any;
   num_ofproduct: number;
   num_oftransfer: number
 }
@@ -19,18 +20,21 @@ export class TransferModalComponent implements OnInit {
     {
       key: 'PD01-BLK-S',
       product: 'Product01',
+      properties: 'สีขาว',
       num_ofproduct: 20,
       num_oftransfer: 10
     },
     {
       key: 'PD02-BLK-M',
       product: 'Product02',
+      properties: 'สีเดา',
       num_ofproduct: 100,
       num_oftransfer: 10
     },
     {
       key: 'PD03-BLK-L',
       product: 'Product03',
+      properties: 'สีเทา',
       num_ofproduct: 250,
       num_oftransfer: 10
     }

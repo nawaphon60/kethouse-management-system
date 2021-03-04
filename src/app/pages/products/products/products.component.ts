@@ -17,8 +17,8 @@ export class ProductsComponent implements OnInit {
   }
 
   deleteProduct() {
-    const modalRef = this.ModalService.create({
-      // nzTitle: 'ปรับจำนวนคงเหลือในคลังสินค้า',
+    const modalRef = this.ModalService.error({
+      nzTitle: 'ไม่สามารถลบสินค้าได้',
       nzWidth: '40%',
       nzContent: DeleteProductComponent,
       nzComponentParams: {
@@ -26,7 +26,7 @@ export class ProductsComponent implements OnInit {
         // state: "edit"
       },
       nzClosable: false,
-      nzFooter: null
+      nzOkText: null,
     }).afterClose.subscribe((r: boolean) => {
       modalRef.unsubscribe()
       if (r) {

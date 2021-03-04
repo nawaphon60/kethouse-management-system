@@ -83,6 +83,7 @@
                 <th></th>
                 <th>รหัสสินค้า</th>
                 <th>ชื่อสินค้า</th>
+                <th>คุณสมบัติ</th>
                 <th>จำนวนที่โอนได้</th>
                 <th>จำนวนที่โอน</th>
                 <th></th>
@@ -98,6 +99,7 @@
                 </td>
                 <td><input nz-input placeholder="ป้อนรหัสสินค้า" nzSize="default" style="width: 150px;" [(ngModel)]="product.key" /></td>
                 <td><input nz-input placeholder="ป้อนชื่อสินค้า" nzSize="default" style="width: 150px;"  [(ngModel)]="product.product"/></td>
+                <td><input nz-input placeholder="ป้อนคุณสมบัติสินค้า" nzSize="default" style="width: 150px;"  [(ngModel)]="product.properties"/></td>
                 <td>
                     <nz-input-number [nzMin]="1" [nzMax]="" [nzStep]="1" [(ngModel)]="product.num_ofproduct"></nz-input-number>
                 </td>
@@ -112,7 +114,7 @@
             </tr>
             <tr>
                 <td class="text-center">
-                    <button nz-button class="outline-orange">
+                    <button nz-button nzType="primary">
                         <a routerLink=""><i class="fas fa-plus-circle me-1"></i>เพิ่มสินค้า</a>
                     </button>
                 </td>

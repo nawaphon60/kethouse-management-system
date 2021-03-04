@@ -67,7 +67,7 @@ export class WarehouseComponent implements OnInit {
         },
         state: "create"
       },
-      nzClosable: false,
+      nzClosable: true,
       nzFooter: null
     }).afterClose.subscribe((r: boolean) => {
       modalRef.unsubscribe()
@@ -88,7 +88,7 @@ export class WarehouseComponent implements OnInit {
         model: obj,
         state: "edit"
       },
-      nzClosable: false,
+      nzClosable: true,
       nzFooter: null
     }).afterClose.subscribe((r: boolean) => {
       modalRef.unsubscribe()
@@ -102,6 +102,8 @@ export class WarehouseComponent implements OnInit {
     this.ModalService.confirm({
       nzTitle: 'ยืนยันการลบคลังสินค้า',
       nzContent: 'ต้องการลบคลังสินค้าใช่หรือไม่ ?',
+      nzClosable: true,
+      nzOkType: 'danger',
       nzOkText: 'ยืนยัน',
       nzCancelText: 'ยกเลิก',
       nzStyle: {
