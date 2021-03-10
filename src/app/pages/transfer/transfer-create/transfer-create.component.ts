@@ -55,7 +55,7 @@ export class TransferCreateComponent implements OnInit {
   ChooseProducts(tplTitle: TemplateRef<{}>): void {
     const modalRef = this.ModalService.create({
       nzTitle: tplTitle,
-      nzWidth: '40%',
+      nzWidth: '50%',
       nzContent: TransferModalComponent,
       nzClosable: false,
       nzFooter: null
