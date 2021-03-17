@@ -1,0 +1,59 @@
+<div class="inner-content mt-3">
+  <div class="row">
+    <h1 class="col-6">รายการโอนย้าย</h1>
+    <div class="col-6 d-flex justify-content-end">
+      <button nz-button class="btn-orange">
+        <a routerLink="/system/transfer-create"><i class="fas fa-plus-circle me-1"></i>สร้างใบสั่งซื้อ</a>
+      </button>
+    </div>
+  </div>
+
+  <nz-input-group class="mb-3 me-3" [nzPrefix]="prefixTemplateSearch" style="width: 400px;">
+    <input nz-input class="ml-3" placeholder="ค้นหา" nzSize="default" name="search">
+  </nz-input-group>
+  <ng-template #prefixTemplateSearch><i nz-icon nzType="search" nzTheme="outline"></i></ng-template>
+  <nz-select class="me-3" ngModel="คลังสินค้าต้นทาง">
+        <nz-option nzValue="คลังสินค้าต้นทาง" nzLabel="คลังสินค้าต้นทาง" nzDisabled></nz-option>
+        <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
+        <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
+        <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
+    </nz-select>
+    <nz-select class="me-3" ngModel="คลังสินค้าปลายทาง">
+        <nz-option nzValue="คลังสินค้าปลายทาง" nzLabel="คลังสินค้าปลายทาง" nzDisabled></nz-option>
+        <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
+        <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
+        <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
+    </nz-select>
+    <nz-date-picker [(ngModel)]="date" [nzPlaceHolder]="'เลือกวันที่'" (ngModelChange)="onChange($event)"></nz-date-picker>
+
+  <nz-table class="mb-3" [nzData]="" [nzShowPagination]="false">
+    <thead>
+      <tr>
+        <th class="col-xxl-1 text-center">วันที่</th>
+        <th class="col-xxl-1 text-center">รายการ</th>
+        <th class="col-xxl-2 text-center">ผู้แพ็คสินค้า</th>
+        <th class="col-xxl-2 text-start">คลังสินค้า</th>
+        <th class="col-xxl-1 text-center">จำนวนสินค้า</th>
+        <th class="col-xxl-1 text-center">Tracking Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="text-center">2014-12-24 23:12:00</td>
+        <td class="text-center">
+          <nz-tag [nzColor]="'cyan'">PK-1234</nz-tag>
+        </td>
+        <td class="text-center">ชื่อจริง นามสกุลจริง</td>
+        <td class="text-start">คลังสินค้าหลัก </td>
+        <td class="text-center">
+          <nz-tag class="tag-orange" [nzColor]="'orange'">3</nz-tag>
+        </td>
+        <td class="py-1">TH1234567890</td>
+      </tr>
+    </tbody>
+  </nz-table>
+
+  <div class="d-flex justify-content-end">
+    <nz-pagination [nzPageIndex]="1" [nzTotal]="10"></nz-pagination>
+  </div>
+</div>

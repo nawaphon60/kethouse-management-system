@@ -6,7 +6,7 @@
       <div class="loading" *ngIf="isLoading">
         <ng-template #indicatorTemplate><i nz-icon nzType="loading"></i></ng-template>
         <nz-spin nzSimple [nzIndicator]="indicatorTemplate"> </nz-spin>
-    </div>
+      </div>
 
       <!-- Dashboard -->
       <a href="">
@@ -35,7 +35,8 @@
       </ng-template> -->
 
       <a routerLink="/system/warehouse">
-        <li nz-menu-item routerLinkActive="ant-menu-item-selected" (nzOpen)="openMap.sub1" (nzOpenChange)="openHandler('sub1')">
+        <li nz-menu-item routerLinkActive="ant-menu-item-selected" (nzOpen)="openMap.sub1"
+          (nzOpenChange)="openHandler('sub1')">
           <i class="fas fa-warehouse me-3"></i>
           <span>Warehouse</span>
         </li>
@@ -47,7 +48,8 @@
         <span title><i class="fas fa-box me-3"></i><span>Products</span></span>
         <ul>
           <a routerLink="/system/products">
-            <li nz-menu-item routerLinkActive="ant-menu-item-selected" [ngClass]="{'ant-menu-item-selected': href === '/system/create-product'}">Products</li>
+            <li nz-menu-item routerLinkActive="ant-menu-item-selected"
+              [ngClass]="{'ant-menu-item-selected': href === '/system/create-product'}">Products</li>
           </a>
           <a routerLink="/system/transfer">
             <li nz-menu-item routerLinkActive="ant-menu-item-selected">Transfer</li>
@@ -56,9 +58,17 @@
       </li>
 
       <!-- Orders -->
+      <a routerLink="/system/orders-list">
+        <li nz-menu-item>
+          <i class="fas fa-shopping-cart me-3"></i>
+          <span>Orders</span>
+        </li>
+      </a>
+
+      <!-- Pack -->
       <li nz-menu-item>
-        <i class="fas fa-shopping-cart me-3"></i>
-        <span>Orders</span>
+        <i class="fas fa-tag me-3"></i>
+        <span>Pack</span>
       </li>
     </ul>
   </nz-sider>

@@ -7,7 +7,8 @@ const routes: Routes = [
   { path: 'change', loadChildren: () => import('./components/change/change.module').then(m => m.ChangeModule) },
   { path: 'Delete-Product', loadChildren: () => import('./components/delete-product/delete-product.module').then(m => m.DeleteProductModule) },
   { path: 'transfer-filter', loadChildren: () => import('./pages/transfer/transfer-filter/transfer-filter.module').then(m => m.TransferFilterModule) },
-  { path: 'transfer-modal', loadChildren: () => import('./components/transfer-modal/transfer-modal.module').then(m => m.TransferModalModule) }
+  { path: 'transfer-modal', loadChildren: () => import('./components/transfer-modal/transfer-modal.module').then(m => m.TransferModalModule) },
+  { path: 'pack-list', loadChildren: () => import('./pages/Pack/pack-list/pack-list.module').then(m => m.PackListModule) }
 ];
 
 @NgModule({

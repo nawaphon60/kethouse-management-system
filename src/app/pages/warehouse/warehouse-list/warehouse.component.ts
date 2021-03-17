@@ -28,14 +28,14 @@ export class WarehouseComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getAll()
+    this.GetAllWarehouse()
     // this.createWarehouse('narmol')
   }
 
-  async getAll() {
+  async GetAllWarehouse() {
     let res: any = null
     try {
-      res = await this.warehouseService.getAll({})
+      res = await this.warehouseService.GetAllWarehouse({})
       console.log(res);
 
       this.warehouselist = res
@@ -46,7 +46,7 @@ export class WarehouseComponent implements OnInit {
   }
 
   search() {
-    this.warehouseService.getAll(this.model_search).then((res: any) => {
+    this.warehouseService.GetAllWarehouse(this.model_search).then((res: any) => {
       this.warehouselist = res
       console.log(res);
       
@@ -72,7 +72,7 @@ export class WarehouseComponent implements OnInit {
     }).afterClose.subscribe((r: boolean) => {
       modalRef.unsubscribe()
       if (r) {
-        this.getAll()
+        this.GetAllWarehouse()
       }
     })
   }
@@ -93,7 +93,7 @@ export class WarehouseComponent implements OnInit {
     }).afterClose.subscribe((r: boolean) => {
       modalRef.unsubscribe()
       if (r) {
-        this.getAll()
+        this.GetAllWarehouse()
       }
     })
   }
@@ -111,7 +111,7 @@ export class WarehouseComponent implements OnInit {
       },
       nzOnOk: () => {
         this.warehouseService.delete(id).then((res: any) => {
-          this.getAll()
+          this.GetAllWarehouse()
         })
       }
     })

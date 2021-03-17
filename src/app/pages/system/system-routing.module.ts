@@ -14,7 +14,8 @@ const routes: Routes = [
       { path: 'create-product', loadChildren: () => import('../products/create-product/create-product.module').then(m => m.CreateProductModule) },
       { path: 'edit-product', loadChildren: () => import('../products/edit-product/edit-product.module').then(m => m.EditProductModule) },
       { path: 'transfer-create', loadChildren: () => import('../transfer/transfer-create/transfer-create.module').then(m => m.TransferCreateModule) },
-      { path: 'transfer-detail', loadChildren: () => import('../transfer/transfer-detail/transfer-detail.module').then(m => m.TransferDetailModule) }
+      { path: 'transfer-detail', loadChildren: () => import('../transfer/transfer-detail/transfer-detail.module').then(m => m.TransferDetailModule) },
+      { path: 'orders-list', loadChildren: () => import('../Orders/orders-list/orders-list.module').then(m => m.OrdersListModule) }
     ]
   }
 ];
