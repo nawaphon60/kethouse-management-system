@@ -58,18 +58,22 @@
       </li>
 
       <!-- Orders -->
-      <a routerLink="/system/orders-list">
-        <li nz-menu-item>
+      <a routerLink="/system/orders-list" >
+        <li nz-menu-item routerLinkActive="ant-menu-item-selected" (nzOpen)="openMap.sub4"
+        (nzOpenChange)="openHandler('sub4')">
           <i class="fas fa-shopping-cart me-3"></i>
           <span>Orders</span>
         </li>
       </a>
 
       <!-- Pack -->
-      <li nz-menu-item>
-        <i class="fas fa-tag me-3"></i>
-        <span>Pack</span>
-      </li>
+      <a routerLink="/system/pack-list">
+        <li nz-menu-item routerLinkActive="ant-menu-item-selected" (nzOpen)="openMap.sub5"
+        (nzOpenChange)="openHandler('sub5')">
+          <i class="fas fa-tag me-3"></i>
+          <span>Pack</span>
+        </li>
+      </a>
     </ul>
   </nz-sider>
   <nz-layout>

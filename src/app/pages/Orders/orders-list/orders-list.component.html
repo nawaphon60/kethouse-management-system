@@ -1,6 +1,6 @@
 <div class="inner-content mt-3">
   <div class="row">
-    <h1 class="col-6">รายการโอนย้าย</h1>
+    <h1 class="col-6">รายการคำสั่งซื้อ</h1>
     <div class="col-6 d-flex justify-content-end">
       <button nz-button class="btn-orange">
         <a routerLink="/system/transfer-create"><i class="fas fa-plus-circle me-1"></i>สร้างใบสั่งซื้อ</a>
@@ -13,42 +13,75 @@
   </nz-input-group>
   <ng-template #prefixTemplateSearch><i nz-icon nzType="search" nzTheme="outline"></i></ng-template>
   <nz-select class="me-3" ngModel="คลังสินค้าต้นทาง">
-        <nz-option nzValue="คลังสินค้าต้นทาง" nzLabel="คลังสินค้าต้นทาง" nzDisabled></nz-option>
-        <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
-        <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
-        <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
-    </nz-select>
-    <nz-select class="me-3" ngModel="คลังสินค้าปลายทาง">
-        <nz-option nzValue="คลังสินค้าปลายทาง" nzLabel="คลังสินค้าปลายทาง" nzDisabled></nz-option>
-        <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
-        <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
-        <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
-    </nz-select>
-    <nz-date-picker [(ngModel)]="date" [nzPlaceHolder]="'เลือกวันที่'" (ngModelChange)="onChange($event)"></nz-date-picker>
+    <nz-option nzValue="คลังสินค้าต้นทาง" nzLabel="คลังสินค้าต้นทาง" nzDisabled></nz-option>
+    <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
+    <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
+    <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
+  </nz-select>
+  <nz-select class="me-3" ngModel="คลังสินค้าปลายทาง">
+    <nz-option nzValue="คลังสินค้าปลายทาง" nzLabel="คลังสินค้าปลายทาง" nzDisabled></nz-option>
+    <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
+    <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
+    <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
+  </nz-select>
+  <nz-date-picker [(ngModel)]="date" [nzPlaceHolder]="'เลือกวันที่'" (ngModelChange)="onChange($event)">
+  </nz-date-picker>
 
   <nz-table class="mb-3" [nzData]="" [nzShowPagination]="false">
     <thead>
       <tr>
-        <th class="col-xxl-1 text-center">วันที่</th>
-        <th class="col-xxl-1 text-center">รายการ</th>
-        <th class="col-xxl-2 text-center">ผู้แพ็คสินค้า</th>
-        <th class="col-xxl-2 text-start">คลังสินค้า</th>
-        <th class="col-xxl-1 text-center">จำนวนสินค้า</th>
-        <th class="col-xxl-1 text-center">Tracking Code</th>
+        <th class="col-xxl text-center">ลำดับ</th>
+        <th class="col-xxl text-center">รหัสคำสั่งซื้อ</th>
+        <th class="col-xxl text-center">ผู้ซื้อ</th>
+        <th class="col-xxl text-start">ราคาสินค้า</th>
+        <th class="col-xxl text-center">สถานะทางการชำระเงิน</th>
+        <th class="col-xxl text-center">ติดต่อ</th>
+        <th class="col-xxl text-center">Tracking Code</th>
+        <th class="col-xxl text-center">อัพเดทล่าสุด</th>
+        <th class="col-xxl"></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="text-center">2014-12-24 23:12:00</td>
+        <td class="text-center">1</td>
         <td class="text-center">
-          <nz-tag [nzColor]="'cyan'">PK-1234</nz-tag>
+          <nz-tag [nzColor]="'cyan'">OD001</nz-tag>
         </td>
         <td class="text-center">ชื่อจริง นามสกุลจริง</td>
-        <td class="text-start">คลังสินค้าหลัก </td>
-        <td class="text-center">
-          <nz-tag class="tag-orange" [nzColor]="'orange'">3</nz-tag>
+        <td class="text-start">
+          <nz-tag class="tag-orange" [nzColor]="'green'">2500</nz-tag>
         </td>
-        <td class="py-1">TH1234567890</td>
+        <td class="text-center">
+          <nz-tag class="tag-orange" [nzColor]="'orange'">รอชำระเงิน</nz-tag>
+        </td>
+        <td class="py-1">098-000-0000</td>
+        <td class="py-1 text-center">
+          <nz-tag class="tag-orange" [nzColor]="'purple'">TH1234567890</nz-tag>
+        </td>
+        <td class="text-center">2014-12-24 23:12:00</td>
+        <td class="py-1">
+          <button class="btn-edit-delete me-3">
+            <i class="far fa-edit table-icon" style="color: #868686;"></i>
+          </button>
+          <ng-template #tplTitleEdit let-ref="modalRef">
+            <div class="submenu-icon d-inline-block me-2"><i class="fas fa-warehouse icon"></i></div>
+            <h2 class="d-inline-block m-0">แก้ไขคลังสินค้า</h2>
+          </ng-template>
+
+          <button class="btn-edit-delete me-3">
+            <i class="fas fa-trash-alt table-icon" style="color: #868686;"></i>
+          </button>
+          <ng-template #TplFooter class="d-flex justify-content-end">
+            <button nz-button class="btn-outline-orange me-3">ปิด</button>
+            <button nz-button class="btn-orange">ยืนยัน</button>
+          </ng-template>
+
+          <a routerLink="/system/warehouse-detail/">
+            <button class="btn btn-light btn-sm btn-detail mb-2">
+              ดูรายละเอียด
+            </button>
+          </a>
+        </td>
       </tr>
     </tbody>
   </nz-table>

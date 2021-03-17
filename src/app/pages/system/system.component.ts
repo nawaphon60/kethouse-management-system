@@ -12,7 +12,9 @@ export class SystemComponent implements OnInit {
   openMap: { [name: string]: boolean } = {
     sub1: false,
     sub2: false,
-    sub3: false
+    sub3: false,
+    sub4: false,
+    sub5: false
   };
   isLoading = false
 
@@ -31,7 +33,6 @@ export class SystemComponent implements OnInit {
     if (this.href == `/system/warehouse-detail/1`) {
       this.openMap.sub1 = true
       console.log(this.openMap.sub1);
-      
     }
 
     if (this.href == '/system/products') {
@@ -44,6 +45,11 @@ export class SystemComponent implements OnInit {
     
     if (this.href == '/system/transfer') {
       this.openMap.sub3 = true
+    }
+
+    if (this.href == '/system/orders-list') {
+      this.openMap.sub4 = true
+      console.log(this.openMap.sub4);
     }
   }
 

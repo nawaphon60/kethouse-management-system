@@ -3,3 +3,56 @@
     background: #fff;
     min-height: 360px;
 }
+
+.btn-edit-delete {
+    border: none;
+    background: #fff;
+    box-shadow: 1px 1px 4px 0px #00000038 !important;
+    border-radius: 5px;
+    padding: 3px 6px;
+    margin-top: 5px;
+}
+
+.btn-edit-delete:hover {
+    transform: scale(1.1);
+}
+
+.btn-detail {
+    box-shadow: 1px 1px 4px 0px #00000038 !important;
+    /* border: 1px solid #e85440; */
+    color: rgb(0 0 0 / 50%);
+}
+
+.btn-detail:hover {
+    transform: scale(1.1);
+}
+
+.table-icon {
+    font-size: 26px;
+}
+
+::ng-deep .ant-table-cell a {
+    color: #000;
+}
+
+::ng-deep .ant-table-cell a:hover {
+    color: #e85440;
+}
+
+.ant-tag-orange, .ant-tag-cyan, .ant-tag-green, .ant-tag-purple {
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 3px;
+    margin-right: 0;
+}
+
+.submenu-icon {
+    color: white;
+    background: #E85440;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 6px;
+    font-size: 16px;
+}
