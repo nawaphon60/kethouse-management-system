@@ -2,11 +2,21 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { NzModalService, NzModalRef } from 'ng-zorro-antd/modal';
 import { EditWarehouseComponent } from 'src/app/components/edit-warehouse/edit-warehouse.component'
 import { WarehouseService } from 'src/app/services/warehouse.service'
+
+interface Warehouse {
+  id: number;
+  warehouse_id: string;
+  warehouse_name: string;
+  numbers_ofproducts: number;
+  updated_at: string;
+}
+
 @Component({
   selector: 'app-warehouse',
   templateUrl: './warehouse.component.html',
   styleUrls: ['./warehouse.component.css']
 })
+
 export class WarehouseComponent implements OnInit {
   isVisible = false;
   isConfirmLoading = false;
@@ -20,6 +30,43 @@ export class WarehouseComponent implements OnInit {
     numbers_ofproducts: ""
   }
   confirmModal?: NzModalRef; // For testing by now
+  warehouse_list: Warehouse[] = [
+    {
+      id: 1,
+      warehouse_id: 'KH001',
+      warehouse_name: 'คลังสินค้า A',
+      numbers_ofproducts: 20,
+      updated_at: 'Feb 23, 2021, 9:09:31 AM'
+    },
+    {
+      id: 2,
+      warehouse_id: 'KH002',
+      warehouse_name: 'คลังสินค้า B',
+      numbers_ofproducts: 80,
+      updated_at: 'Feb 23, 2021, 9:09:31 AM'
+    },
+    {
+      id: 3,
+      warehouse_id: 'KH003',
+      warehouse_name: 'คลังสินค้า C',
+      numbers_ofproducts: 50,
+      updated_at: 'Feb 23, 2021, 9:09:31 AM'
+    },
+    {
+      id: 4,
+      warehouse_id: 'KH003',
+      warehouse_name: 'คลังสินค้า D',
+      numbers_ofproducts: 320,
+      updated_at: 'Feb 23, 2021, 9:09:31 AM'
+    },
+    {
+      id: 5,
+      warehouse_id: 'KH003',
+      warehouse_name: 'คลังสินค้า E',
+      numbers_ofproducts: 250,
+      updated_at: 'Feb 23, 2021, 9:09:31 AM'
+    },
+  ]
 
   constructor(
     private ModalService: NzModalService,
@@ -49,7 +96,7 @@ export class WarehouseComponent implements OnInit {
     this.warehouseService.GetAllWarehouse(this.model_search).then((res: any) => {
       this.warehouselist = res
       console.log(res);
-      
+
     }).catch((err: any) => {
 
     })
@@ -77,9 +124,9 @@ export class WarehouseComponent implements OnInit {
     })
   }
 
-  editWarehouse(obj: any,tplTitleEdit: TemplateRef<{}>): void {
+  editWarehouse(obj: any, tplTitleEdit: TemplateRef<{}>): void {
     console.log(obj);
-    
+
     const modalRef = this.ModalService.create({
       nzTitle: tplTitleEdit,
       nzWidth: '40%',

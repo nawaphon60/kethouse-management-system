@@ -17,7 +17,8 @@ const routes: Routes = [
       { path: 'transfer-detail', loadChildren: () => import('../transfer/transfer-detail/transfer-detail.module').then(m => m.TransferDetailModule) },
       { path: 'orders-list', loadChildren: () => import('../Orders/orders-list/orders-list.module').then(m => m.OrdersListModule) },
       { path: 'pack-list', loadChildren: () => import('../Pack/pack-list/pack-list.module').then(m => m.PackListModule) },
-      { path: 'create-orders', loadChildren: () => import('../Orders/create-orders/create-orders.module').then(m => m.CreateOrdersModule) }
+      { path: 'create-orders', loadChildren: () => import('../Orders/create-orders/create-orders.module').then(m => m.CreateOrdersModule) },
+      { path: 'pack-create-pack', loadChildren: () => import('../Pack/pack-create-pack/pack-create-pack.module').then(m => m.PackCreatePackModule) }
     ]
   }
 ];

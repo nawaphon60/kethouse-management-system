@@ -1,13 +1,13 @@
 <div class="inner-content mt-3">
     <div>
-        <h1 class="col-6">โอนย้ายสินค้า</h1>
+        <h1 class="col-6">รายละเอียดการแพ็ค</h1>
     </div>
     <div class="mt-5">
         <h2>
             <span class="submenu-icon d-inline-block">
                 <i class="fas fa-file-alt icon"></i>
             </span>
-            ข้อมูลการย้ายคลัง
+            ข้อมูลการแพ็ค
         </h2>
     </div>
 
@@ -17,50 +17,23 @@
                 <p>รายการ</p>
             </div>
             <div class="col-2">
-                <input nz-input nzSize="default" />
+                <p>PK-000012</p>
             </div>
         </div>
         <div class="row col-12 mt-1">
             <div class="col-2">
-                <p>สถานะการโอนย้าย</p>
+                <p>วันที่ทำรายการ</p>
             </div>
             <div class="col-2">
-                <nz-select ngModel="ขาย">
-                    <nz-option nzValue="ขาย" nzLabel="ขาย" nzDisabled></nz-option>
-                    <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-                    <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-                </nz-select>
+                <p>Feb 23, 2021, 9:09:31 AM</p>
             </div>
         </div>
         <div class="row col-12 mt-1">
             <div class="col-2">
-                <p>จาก</p>
+                <p>ผู้ทำรายการ</p>
             </div>
             <div class="col-2">
-                <nz-select ngModel="คลังสินค้า A">
-                    <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
-                    <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
-                    <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
-                </nz-select>
-            </div>
-            <div class="col-1 text-center">
-                <p>ไป</p>
-            </div>
-            <div class="col-2">
-                <nz-select ngModel="คลังสินค้า A">
-                    <nz-option nzValue="คลังสินค้า A" nzLabel="คลังสินค้า A"></nz-option>
-                    <nz-option nzValue="คลังสินค้า B" nzLabel="คลังสินค้า B"></nz-option>
-                    <nz-option nzValue="คลังสินค้า C" nzLabel="คลังสินค้า C"></nz-option>
-                </nz-select>
-            </div>
-        </div>
-        <div class="row col-12">
-            <div class="col-2 mt-1">
-                <p>วันที่</p>
-            </div>
-            <div class="col-2 mt-1">
-                <nz-date-picker [(ngModel)]="date" [nzPlaceHolder]="'เลือกวันที่'" (ngModelChange)="onChange($event)">
-                </nz-date-picker>
+                <p>User A</p>
             </div>
         </div>
     </div>
@@ -129,15 +102,6 @@
             </tr>
         </tbody>
     </nz-table>
-
-    <div class="row col-12 my-3">
-        <div class="col-2">
-            <p>หมายเหตุ</p>
-        </div>
-        <div class="col-6">
-            <textarea nz-input style="height: 100px;"></textarea>
-        </div>
-    </div>
 
     <footer class="d-flex justify-content-end mt-3">
         <a routerLink="/system/products"><button nz-button class="btn-outline-orange me-3">ยกเลิก</button></a>

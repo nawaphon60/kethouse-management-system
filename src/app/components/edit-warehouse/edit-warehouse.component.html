@@ -29,7 +29,8 @@
         <p>จังหวัด</p>
     </div>
     <div class="col-9">
-        <nz-select ngModel="ชลบุรี">
+        <nz-select ngModel="เลือกจังหวัด">
+            <nz-option [nzValue]="'เลือกจังหวัด'" nzLabel="เลือกจังหวัด" nzDisabled></nz-option>
             <nz-option [nzValue]="'ชลบุรี'" nzLabel="ชลบุรี"></nz-option>
         </nz-select>
     </div>
@@ -40,6 +41,7 @@
     </div>
     <div class="col-9">
         <nz-select ngModel="ศรีราชา">
+            <nz-option nzValue="เลือกอำเภอ" nzLabel="เลือกอำเภอ" nzDisabled></nz-option>
             <nz-option nzValue="ศรีราชา" nzLabel="ศรีราชา"></nz-option>
         </nz-select>
     </div>
